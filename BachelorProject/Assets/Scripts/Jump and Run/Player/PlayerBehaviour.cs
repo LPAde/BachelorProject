@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Jump_and_Run.Player
 {
@@ -10,14 +11,17 @@ namespace Jump_and_Run.Player
         [Header("Movement Stuff")]
         [SerializeField] private float speed;
         [SerializeField] private float jumpStrength;
-        [SerializeField] private float horizontalMovement;
-        [SerializeField] private CharacterController characterController;
-        
+        [SerializeField] private float horizontalInput;
+        [SerializeField] private bool isGrounded;
+        [SerializeField] private Rigidbody2D rigid;
+        [SerializeField] private Transform currentRespawnPoint;
+
         [Header("Visual Stuff")]
         [SerializeField] private List<GameObject> models;
         [SerializeField] private Animator anim;
         [SerializeField] private Animator badAnim;
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private SpriteRenderer badSpriteRenderer;
 
         #region Unity Methods
 
@@ -46,6 +50,14 @@ namespace Jump_and_Run.Player
             
             if(other.CompareTag("Enemy"))
                 Respawn();
+
+            if (other.CompareTag("Respawn"))
+                currentRespawnPoint = other.transform;
+        }
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            isGrounded = other.gameObject.CompareTag("Ground");
         }
 
         #endregion
@@ -56,11 +68,11 @@ namespace Jump_and_Run.Player
         /// </summary>
         private void CheckInputs()
         {
-            if(Input.GetKey(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.Space))
                 Jump();
             
             // Movement.
-            horizontalMovement = Input.GetAxis("Horizontal");
+            horizontalInput = Input.GetAxis("Horizontal");
         }
         
         /// <summary>
@@ -68,15 +80,14 @@ namespace Jump_and_Run.Player
         /// </summary>
         private void Move()
         {
-            Vector3 movementVector = new Vector3(horizontalMovement * speed * Time.fixedDeltaTime, 0);
-            movementVector += (Vector3) Physics2D.gravity * Time.fixedDeltaTime;
-            characterController.Move(movementVector);
+            float horizontalMovement = horizontalInput * speed * Time.fixedDeltaTime;
+            rigid.velocity = new Vector2(horizontalMovement, rigid.velocity.y);
 
-            if (horizontalMovement > 0)
+            if (horizontalInput > 0)
             {
                 spriteRenderer.flipX = false;
             }
-            else if (horizontalMovement < 0)
+            else if (horizontalInput < 0)
             {
                 spriteRenderer.flipX = true;
             }
@@ -84,17 +95,19 @@ namespace Jump_and_Run.Player
 
         private void Jump()
         {
-            characterController.Move(new Vector3(0, jumpStrength));
+            if(isGrounded) 
+                rigid.AddForce(new Vector2(0, jumpStrength));
         }
 
         private void FinishLevel()
         {
-            
+            SceneManager.LoadScene(1);
         }
 
+        // Respawns the player.
         private void Respawn()
         {
-            
+            transform.position = currentRespawnPoint.position;
         }
 
         /// <summary>
@@ -103,6 +116,7 @@ namespace Jump_and_Run.Player
         public void Downgrade()
         {
             anim = badAnim;
+            spriteRenderer = badSpriteRenderer;
             models[0].SetActive(false);
             models[1].SetActive(true);
         }
