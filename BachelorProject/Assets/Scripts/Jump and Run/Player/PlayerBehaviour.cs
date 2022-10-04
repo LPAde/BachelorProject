@@ -101,7 +101,7 @@ namespace Jump_and_Run.Player
 
         private void FinishLevel()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
         // Respawns the player.
