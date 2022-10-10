@@ -23,6 +23,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/Dialog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual Novel/JumpAndRunChanger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump and Run/Downgradings/PerformanceRuiner.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -30,9 +31,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/Dialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Environment/EnvironmentBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/VisualNovelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/JumpAndRunChanger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Downgradings/PerformanceRuiner.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -46,6 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -80,7 +83,7 @@
       <updated>1664308726312</updated>
       <workItem from="1664308747079" duration="3199000" />
       <workItem from="1664400434145" duration="916000" />
-      <workItem from="1664901491698" duration="5850000" />
+      <workItem from="1664901491698" duration="7163000" />
     </task>
     <servers />
   </component>
