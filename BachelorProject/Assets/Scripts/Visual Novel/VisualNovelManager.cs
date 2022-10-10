@@ -1,9 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Visual_Novel.Dialog;
 
 namespace Visual_Novel
 {
@@ -14,7 +13,11 @@ namespace Visual_Novel
         [SerializeField] private DialogManager dialogManager;
         [SerializeField] private List<bool> firedDepartments;
         [SerializeField] private List<Button> fireButtons;
-
+        [SerializeField] private GameObject dialog;
+        [SerializeField] private GameObject buttons;
+        
+        private bool _hasFired;
+        
         private void Awake()
         {
             if(Instance != null)
@@ -46,24 +49,49 @@ namespace Visual_Novel
                 fireButtons[i].interactable = false;
                 firedAmount++;
             }
+            
+            dialogManager.UpdateDialog(firedAmount);
         }
 
         /// <summary>
         /// Fires a department of your liking.
         /// </summary>
         /// <param name="department"> The department you want to fire. </param>
-        public void FireDepartment(GameDepartments department)
+        public void FireDepartment(int department)
         {
-            firedDepartments[(int) department] = true;
-            JumpAndRunChanger.Instance.FiredDepartments[(int) department] = true;
+            firedDepartments[department] = true;
+            JumpAndRunChanger.Instance.FiredDepartments[department] = true;
+            buttons.SetActive(false);
+            dialog.SetActive(true);
+            
+            // Starts the correct dialog.
+            byte firedAmount = 3;
+            
+            for (int i = 0; i < fireButtons.Count; i++)
+            {
+                if (!firedDepartments[i])
+                    continue;
+                
+                fireButtons[i].interactable = false;
+                firedAmount++;
+            }
+            
+            dialogManager.UpdateDialog(firedAmount);
         }
 
         /// <summary>
         /// Ends the visual novel part and goes into the jump and run Scene.
         /// </summary>
-        public void StartJumpAndRun()
+        public void EndDialog()
         {
-            SceneManager.LoadScene(1);
+            if(_hasFired)
+                SceneManager.LoadScene(1);
+            else
+            {
+                buttons.SetActive(true);
+                dialog.SetActive(false);
+                _hasFired = true;
+            }
         }
     }
 
