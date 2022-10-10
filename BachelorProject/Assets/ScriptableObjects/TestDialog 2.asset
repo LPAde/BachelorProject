@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TestDialog 2
   m_EditorClassIdentifier: 
   talkers:
-  - Andre
+  - Hans
   dialogs:
-  - Willst du noch einen Feuern?
+  - You wanna fire another one?

@@ -60,7 +60,7 @@ namespace Visual_Novel
         public void FireDepartment(int department)
         {
             firedDepartments[department] = true;
-            JumpAndRunChanger.Instance.FiredDepartments[department] = true;
+            JumpAndRunChanger.Instance.FireDepartment((GameDepartments)department);
             buttons.SetActive(false);
             dialog.SetActive(true);
             

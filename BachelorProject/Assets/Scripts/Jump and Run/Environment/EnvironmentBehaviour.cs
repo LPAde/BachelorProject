@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Visual_Novel;
 
 namespace Jump_and_Run.Environment
 {
@@ -7,8 +8,19 @@ namespace Jump_and_Run.Environment
     {
         [SerializeField] private List<GameObject> models;
 
-        public void Downgrade()
+        private void Awake()
         {
+            Downgrade();
+        }
+
+        private void Downgrade()
+        {
+            if(JumpAndRunChanger.Instance == null)
+                return;
+            
+            if(!JumpAndRunChanger.Instance.FiredDepartments[(int)GameDepartments.EnvironmentArt])
+                return;
+            
             models[0].SetActive(false);
             models[1].SetActive(true);
         }

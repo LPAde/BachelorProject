@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ namespace Visual_Novel
     public class JumpAndRunChanger : MonoBehaviour
     {
         public static JumpAndRunChanger Instance;
+        
         [SerializeField] private List<bool> firedDepartments;
 
         public List<bool> FiredDepartments => firedDepartments;
