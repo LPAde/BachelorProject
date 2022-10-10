@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Visual_Novel;
 
 namespace Jump_and_Run.Player
 {
@@ -31,6 +32,7 @@ namespace Jump_and_Run.Player
                 Destroy(Instance.gameObject);
         
             Instance = this;
+            Downgrade();
         }
         
         private void Update()
@@ -48,7 +50,7 @@ namespace Jump_and_Run.Player
             if(other.CompareTag("Finish"))
                 FinishLevel();
             
-            if(other.CompareTag("Enemy"))
+            if(other.CompareTag("Respawn"))
                 Respawn();
 
             if (other.CompareTag("Respawn"))
@@ -57,7 +59,12 @@ namespace Jump_and_Run.Player
 
         private void OnCollisionStay2D(Collision2D other)
         {
-            isGrounded = other.gameObject.CompareTag("Ground");
+            isGrounded = other.gameObject.CompareTag("Untagged");
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            isGrounded = false;
         }
 
         #endregion
@@ -113,8 +120,14 @@ namespace Jump_and_Run.Player
         /// <summary>
         /// Downgrades the player visually.
         /// </summary>
-        public void Downgrade()
+        private void Downgrade()
         {
+            if(JumpAndRunChanger.Instance == null)
+                return;
+            
+            if(!JumpAndRunChanger.Instance.FiredDepartments[(int)GameDepartments.CharacterArt])
+                return;
+            
             anim = badAnim;
             spriteRenderer = badSpriteRenderer;
             models[0].SetActive(false);
