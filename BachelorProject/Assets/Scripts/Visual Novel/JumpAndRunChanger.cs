@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Visual_Novel
 {
+    [DefaultExecutionOrder(-100)]
     public class JumpAndRunChanger : MonoBehaviour
     {
         // TODO: Move Game Object to main menu scene to prevent bugs.

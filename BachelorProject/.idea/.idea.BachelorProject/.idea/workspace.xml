@@ -32,10 +32,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/VisualNovelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/JumpAndRunChanger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Environment/EnvironmentBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Downgradings/PerformanceRuiner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/JumpAndRunChanger.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -84,7 +84,7 @@
       <updated>1664308726312</updated>
       <workItem from="1664308747079" duration="3199000" />
       <workItem from="1664400434145" duration="916000" />
-      <workItem from="1664901491698" duration="8306000" />
+      <workItem from="1664901491698" duration="8905000" />
     </task>
     <servers />
   </component>

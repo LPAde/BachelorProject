@@ -9,11 +9,12 @@ namespace Jump_and_Run.Downgradings
     {
         [SerializeField] private float intervalDuration;
         [SerializeField] private float lagDuration;
-        [SerializeField] private float duration;
+        [SerializeField] private float currentDuration;
 
         private void Awake()
         {
             Activate();
+            currentDuration = intervalDuration;
         }
 
         private void Update()
@@ -26,9 +27,9 @@ namespace Jump_and_Run.Downgradings
         /// </summary>
         private void StartLagging()
         {
-            duration -= Time.deltaTime / Time.timeScale;
+            currentDuration -= Time.deltaTime / Time.timeScale;
 
-            if (duration <= 0)
+            if (currentDuration <= 0)
             {
                 if (Math.Abs(Time.timeScale - 1) < .1f)
                 {
@@ -37,20 +38,18 @@ namespace Jump_and_Run.Downgradings
                     // Only 60% Chance of slowdowns to make them seem more random.
                     if (rn > .3f)
                     {
-                        duration = intervalDuration;
+                        currentDuration = intervalDuration;
                     }
                     else
                     {
                         Time.timeScale = rn;
-                        duration = Time.timeScale * lagDuration;
-
-                        print(Time.timeScale);
+                        currentDuration = Time.timeScale * lagDuration;
                     }
                 }
                 else
                 {
                     // Adds a random time to make it seem random.
-                    duration = intervalDuration + Random.Range(0, intervalDuration * .5f);
+                    currentDuration = intervalDuration + Random.Range(0, intervalDuration * .5f);
                     Time.timeScale = 1;
                 }
             }
