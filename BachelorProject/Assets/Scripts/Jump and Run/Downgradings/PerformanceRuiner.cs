@@ -61,16 +61,10 @@ namespace Jump_and_Run.Downgradings
         /// </summary>
         private void Activate()
         {
-            if (JumpAndRunChanger.Instance == null)
-            {
-                gameObject.SetActive(false);
-                return;
-            }
-
-            if (JumpAndRunChanger.Instance.FiredDepartments[(int) GameDepartments.PerformanceOptimisation])
+          if (JumpAndRunChanger.Instance.FiredDepartments[(int) GameDepartments.PerformanceOptimisation])
                 return;
 
-            gameObject.SetActive(false);
+          gameObject.SetActive(false);
         }
     }
 }

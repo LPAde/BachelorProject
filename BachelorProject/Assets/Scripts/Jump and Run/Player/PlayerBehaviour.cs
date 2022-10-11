@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,7 +35,12 @@ namespace Jump_and_Run.Player
             Instance = this;
             Downgrade();
         }
-        
+
+        private void Start()
+        {
+            currentRespawnPoint = transform;
+        }
+
         private void Update()
         {
             CheckInputs();
@@ -122,9 +128,6 @@ namespace Jump_and_Run.Player
         /// </summary>
         private void Downgrade()
         {
-            if(JumpAndRunChanger.Instance == null)
-                return;
-            
             if(!JumpAndRunChanger.Instance.FiredDepartments[(int)GameDepartments.CharacterArt])
                 return;
             

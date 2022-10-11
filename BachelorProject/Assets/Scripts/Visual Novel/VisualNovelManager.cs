@@ -39,18 +39,15 @@ namespace Visual_Novel
         {
             firedDepartments = currentState;
 
-            byte firedAmount = 0;
-            
             for (int i = 0; i < firedDepartments.Count; i++)
             {
                 if (!firedDepartments[i])
                     continue;
                 
                 fireButtons[i].interactable = false;
-                firedAmount++;
             }
             
-            dialogManager.UpdateDialog(firedAmount);
+            dialogManager.UpdateDialog(JumpAndRunChanger.Instance.FiredDepartmentsCount);
         }
 
         /// <summary>

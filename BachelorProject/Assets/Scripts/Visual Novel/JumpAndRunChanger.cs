@@ -5,11 +5,18 @@ namespace Visual_Novel
 {
     public class JumpAndRunChanger : MonoBehaviour
     {
+        // TODO: Move Game Object to main menu scene to prevent bugs.
         public static JumpAndRunChanger Instance;
         
         [SerializeField] private List<bool> firedDepartments;
 
         public List<bool> FiredDepartments => firedDepartments;
+
+        public int FiredDepartmentsCount
+        {
+            get;
+            private set;
+        }
 
         private void Awake()
         {
@@ -31,6 +38,7 @@ namespace Visual_Novel
         public void FireDepartment(GameDepartments department)
         {
             firedDepartments[(int)department] = true;
+            FiredDepartmentsCount++;
         }
     }
 }

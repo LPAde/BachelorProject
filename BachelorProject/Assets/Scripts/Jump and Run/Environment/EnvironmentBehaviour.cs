@@ -15,9 +15,6 @@ namespace Jump_and_Run.Environment
 
         private void Downgrade()
         {
-            if(JumpAndRunChanger.Instance == null)
-                return;
-            
             if(!JumpAndRunChanger.Instance.FiredDepartments[(int)GameDepartments.EnvironmentArt])
                 return;
             
