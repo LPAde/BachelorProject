@@ -331,8 +331,8 @@ MonoBehaviour:
   models:
   - {fileID: 703673592}
   - {fileID: 2144676447}
-  anim: {fileID: 0}
-  badAnim: {fileID: 0}
+  anim: {fileID: 703673595}
+  badAnim: {fileID: 2144676450}
   spriteRenderer: {fileID: 703673593}
   badSpriteRenderer: {fileID: 2144676448}
 --- !u!4 &261716475
@@ -399,7 +399,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &513926129
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 703673594}
   - component: {fileID: 703673593}
+  - component: {fileID: 703673595}
   m_Layer: 0
   m_Name: Visual Player
   m_TagString: Untagged
@@ -804,6 +805,26 @@ Transform:
   m_Father: {fileID: 261716475}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &703673595
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703673592}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &789743842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2144676449}
   - component: {fileID: 2144676448}
+  - component: {fileID: 2144676450}
   m_Layer: 0
   m_Name: Bad Visual Player
   m_TagString: Untagged
@@ -2329,3 +2351,23 @@ Transform:
   m_Father: {fileID: 261716475}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2144676450
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144676447}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

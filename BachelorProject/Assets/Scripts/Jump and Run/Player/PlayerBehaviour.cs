@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,17 +8,19 @@ namespace Jump_and_Run.Player
     public class PlayerBehaviour : MonoBehaviour
     {
         public static PlayerBehaviour Instance;
-        
-        [Header("Movement Stuff")]
-        [SerializeField] private float speed;
+
+        [Header("Movement Stuff")] [SerializeField]
+        private float speed;
+
         [SerializeField] private float jumpStrength;
         [SerializeField] private float horizontalInput;
         [SerializeField] private bool isGrounded;
         [SerializeField] private Rigidbody2D rigid;
         [SerializeField] private Transform currentRespawnPoint;
 
-        [Header("Visual Stuff")]
-        [SerializeField] private List<GameObject> models;
+        [Header("Visual Stuff")] [SerializeField]
+        private List<GameObject> models;
+
         [SerializeField] private Animator anim;
         [SerializeField] private Animator badAnim;
         [SerializeField] private SpriteRenderer spriteRenderer;
@@ -29,9 +30,9 @@ namespace Jump_and_Run.Player
 
         private void Awake()
         {
-            if(Instance != null)
+            if (Instance != null)
                 Destroy(Instance.gameObject);
-        
+
             Instance = this;
             Downgrade();
         }
@@ -45,18 +46,18 @@ namespace Jump_and_Run.Player
         {
             CheckInputs();
         }
-        
+
         private void FixedUpdate()
         {
             Move();
         }
-        
+
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if(other.CompareTag("Finish"))
+            if (other.CompareTag("Finish"))
                 FinishLevel();
-            
-            if(other.CompareTag("Respawn"))
+
+            if (other.CompareTag("Respawn"))
                 Respawn();
 
             if (other.CompareTag("Respawn"))
@@ -74,20 +75,21 @@ namespace Jump_and_Run.Player
         }
 
         #endregion
-        
+
+        #region Private Methods
 
         /// <summary>
         /// Checks the players inputs.
         /// </summary>
         private void CheckInputs()
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
                 Jump();
-            
+
             // Movement.
             horizontalInput = Input.GetAxis("Horizontal");
         }
-        
+
         /// <summary>
         /// Moves the player.
         /// </summary>
@@ -108,7 +110,7 @@ namespace Jump_and_Run.Player
 
         private void Jump()
         {
-            if(isGrounded) 
+            if (isGrounded)
                 rigid.AddForce(new Vector2(0, jumpStrength));
         }
 
@@ -128,13 +130,15 @@ namespace Jump_and_Run.Player
         /// </summary>
         private void Downgrade()
         {
-            if(!JumpAndRunChanger.Instance.FiredDepartments[(int)GameDepartments.CharacterArt])
+            if (!JumpAndRunChanger.Instance.FiredDepartments[(int) GameDepartments.CharacterArt])
                 return;
-            
+
             anim = badAnim;
             spriteRenderer = badSpriteRenderer;
             models[0].SetActive(false);
             models[1].SetActive(true);
         }
+
+        #endregion
     }
 }
