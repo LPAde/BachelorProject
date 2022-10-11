@@ -808,7 +808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2a01cf28c299c488df1993e1733380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDuration: 10
+  intervalDuration: 20
+  lagDuration: 7
   duration: 5
 --- !u!4 &2029643092
 Transform:
