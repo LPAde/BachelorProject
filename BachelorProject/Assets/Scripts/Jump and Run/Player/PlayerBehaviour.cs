@@ -10,7 +10,6 @@ namespace Jump_and_Run.Player
     {
         #region Fields
 
-        public static PlayerBehaviour Instance;
         [SerializeField] private JumpAndRunChanger changer;
 
         [Header("Movement Stuff")] 
@@ -39,10 +38,6 @@ namespace Jump_and_Run.Player
 
         private void Awake()
         {
-            if (Instance != null)
-                Destroy(Instance.gameObject);
-
-            Instance = this;
             Downgrade();
         }
 

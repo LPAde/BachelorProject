@@ -39,8 +39,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Sound.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/EnemyBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -91,7 +91,7 @@
       <workItem from="1664400434145" duration="916000" />
       <workItem from="1664901491698" duration="11583000" />
       <workItem from="1665677542492" duration="5416000" />
-      <workItem from="1665750902793" duration="280000" />
+      <workItem from="1665750902793" duration="438000" />
     </task>
     <servers />
   </component>
