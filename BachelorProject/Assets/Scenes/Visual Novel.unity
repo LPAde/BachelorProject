@@ -515,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7984386602109342831, guid: 513710e1a1c865e44b175d1e4eb6727c, type: 3}
       propertyPath: m_text
-      value: Well sux to be you.
+      value: Hue hue.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2459,7 +2459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7984386602109342831, guid: 513710e1a1c865e44b175d1e4eb6727c, type: 3}
       propertyPath: m_text
-      value: Hi I am the boss Hans, now fire someone!
+      value: Haha now you fired someone.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2533,10 +2533,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - {fileID: 1754283525}
-  - {fileID: 1250603391}
   - {fileID: 115161823}
   - {fileID: 935268033}
   - {fileID: 860625714}
+  - {fileID: 1250603391}
   - {fileID: 249055340}
   - {fileID: 1750806809}
   - {fileID: 542413933}
@@ -5476,7 +5476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7984386602109342831, guid: 513710e1a1c865e44b175d1e4eb6727c, type: 3}
       propertyPath: m_text
-      value: But I don't wanna fire someone :c
+      value: Noooooooooooo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
