@@ -7,6 +7,7 @@ namespace Jump_and_Run.Downgradings
 {
     public class PerformanceRuiner : MonoBehaviour
     {
+        [SerializeField] private JumpAndRunChanger changer;
         [SerializeField] private float intervalDuration;
         [SerializeField] private float lagDuration;
         [SerializeField] private float currentDuration;
@@ -61,7 +62,7 @@ namespace Jump_and_Run.Downgradings
         /// </summary>
         private void Activate()
         {
-          if (JumpAndRunChanger.Instance.FiredDepartments[(int) GameDepartments.PerformanceOptimisation])
+          if (changer.firedDepartments[(int) GameDepartments.PerformanceOptimisation])
                 return;
 
           gameObject.SetActive(false);

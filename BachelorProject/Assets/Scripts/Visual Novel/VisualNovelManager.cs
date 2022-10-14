@@ -9,6 +9,7 @@ namespace Visual_Novel
     public class VisualNovelManager : MonoBehaviour
     {
         public static VisualNovelManager Instance;
+        [SerializeField] private JumpAndRunChanger changer;
 
         [SerializeField] private DialogManager dialogManager;
         [SerializeField] private List<bool> firedDepartments;
@@ -28,7 +29,7 @@ namespace Visual_Novel
 
         private void Start()
         {
-            Initialize(JumpAndRunChanger.Instance.FiredDepartments);
+            Initialize(changer.firedDepartments);
         }
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace Visual_Novel
                 fireButtons[i].interactable = false;
             }
             
-            dialogManager.UpdateDialog(JumpAndRunChanger.Instance.FiredDepartmentsCount);
+            dialogManager.UpdateDialog(changer.FiredDepartmentsCount);
         }
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Visual_Novel
         public void FireDepartment(int department)
         {
             firedDepartments[department] = true;
-            JumpAndRunChanger.Instance.FireDepartment((GameDepartments)department);
+            changer.FireDepartment((GameDepartments)department);
             buttons.SetActive(false);
             dialog.SetActive(true);
             

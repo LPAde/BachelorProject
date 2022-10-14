@@ -3,15 +3,10 @@ using UnityEngine;
 
 namespace Visual_Novel
 {
-    [DefaultExecutionOrder(-100)]
-    public class JumpAndRunChanger : MonoBehaviour
+    [CreateAssetMenu(fileName = "JumpAndRunChanger", menuName = "JumpAndRunChanger", order = 0)]
+    public class JumpAndRunChanger : ScriptableObject
     {
-        // TODO: Move Game Object to main menu scene to prevent bugs.
-        public static JumpAndRunChanger Instance;
-        
-        [SerializeField] private List<bool> firedDepartments;
-
-        public List<bool> FiredDepartments => firedDepartments;
+        public List<bool> firedDepartments;
 
         public int FiredDepartmentsCount
         {
@@ -19,16 +14,13 @@ namespace Visual_Novel
             private set;
         }
 
-        private void Awake()
+        private void OnEnable()
         {
-            if (Instance != null)
+            FiredDepartmentsCount = 0;
+            
+            for (int i = 0; i < firedDepartments.Count; i++)
             {
-                Destroy(gameObject);
-            }
-            else
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
+                firedDepartments[i] = false;
             }
         }
 

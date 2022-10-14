@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Visual_Novel;
@@ -7,24 +8,32 @@ namespace Jump_and_Run.Player
 {
     public class PlayerBehaviour : MonoBehaviour
     {
+        #region Fields
+
         public static PlayerBehaviour Instance;
+        [SerializeField] private JumpAndRunChanger changer;
 
-        [Header("Movement Stuff")] [SerializeField]
-        private float speed;
-
+        [Header("Movement Stuff")] 
+        [SerializeField] private float speed;
         [SerializeField] private float jumpStrength;
         [SerializeField] private float horizontalInput;
         [SerializeField] private bool isGrounded;
         [SerializeField] private Rigidbody2D rigid;
         [SerializeField] private Transform currentRespawnPoint;
-
-        [Header("Visual Stuff")] [SerializeField]
-        private List<GameObject> models;
-
+        
+        [Header("Visual Stuff")] 
+        [SerializeField] private List<GameObject> models;
         [SerializeField] private Animator anim;
         [SerializeField] private Animator badAnim;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private SpriteRenderer badSpriteRenderer;
+
+        [Header("Buggy Stuff")]
+        [SerializeField] private bool isBuggy;
+        [SerializeField] private int jumpSuccessRate;
+
+        #endregion
+        
 
         #region Unity Methods
 
@@ -111,7 +120,17 @@ namespace Jump_and_Run.Player
         private void Jump()
         {
             if (isGrounded)
+            {
+                if (isBuggy)
+                {
+                    // Sometimes won't work when game is buggy.
+                    if(Random.Range(0, 100) > jumpSuccessRate)
+                        return;
+                }
+                
                 rigid.AddForce(new Vector2(0, jumpStrength));
+                AudioManager.Instance.PlaySound("Jump");
+            }
         }
 
         private void FinishLevel()
@@ -126,11 +145,16 @@ namespace Jump_and_Run.Player
         }
 
         /// <summary>
-        /// Downgrades the player visually.
+        /// Downgrades the player visually or makes them buggy.
         /// </summary>
         private void Downgrade()
         {
-            if (!JumpAndRunChanger.Instance.FiredDepartments[(int) GameDepartments.CharacterArt])
+            if (changer.firedDepartments[(int) GameDepartments.Debugging])
+            {
+                isBuggy = true;
+            }
+            
+            if (!changer.firedDepartments[(int) GameDepartments.CharacterArt])
                 return;
 
             anim = badAnim;

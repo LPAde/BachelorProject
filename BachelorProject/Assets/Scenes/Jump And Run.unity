@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8324076a271285c4e95402d5b3793726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   speed: 500
   jumpStrength: 300
   horizontalInput: 0
@@ -335,6 +336,8 @@ MonoBehaviour:
   badAnim: {fileID: 2144676450}
   spriteRenderer: {fileID: 703673593}
   badSpriteRenderer: {fileID: 2144676448}
+  isBuggy: 0
+  jumpSuccessRate: 85
 --- !u!4 &261716475
 Transform:
   m_ObjectHideFlags: 0
@@ -430,6 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a235344953007458d85a4a2cc60e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   models:
   - {fileID: 1535039278}
   - {fileID: 1260822233}
@@ -633,6 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a235344953007458d85a4a2cc60e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   models:
   - {fileID: 701567967}
   - {fileID: 578493101}
@@ -909,51 +914,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &974604222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 974604224}
-  - component: {fileID: 974604223}
-  m_Layer: 0
-  m_Name: JumpAndRunChanger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &974604223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 974604222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d34c0619563960459fb516faf920495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firedDepartments: 0000000000000000
---- !u!4 &974604224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 974604222}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062167201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,6 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a235344953007458d85a4a2cc60e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   models:
   - {fileID: 160248886}
   - {fileID: 1108403748}
@@ -1059,6 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9eaec337fc44314d9fcc974a14bdf07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   levels:
   - {fileID: 513926129}
   - {fileID: 1957228355}
@@ -1559,6 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a235344953007458d85a4a2cc60e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   models:
   - {fileID: 1445731093}
   - {fileID: 1211133148}
@@ -1814,6 +1777,59 @@ Transform:
   m_Father: {fileID: 513926131}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1584898406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1584898408}
+  - component: {fileID: 1584898407}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1584898407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584898406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e674c82612f5f439270ffed7838584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
+  sfxSounds:
+  - {fileID: 11400000, guid: 1ee26035c57e8754480d3f7f9ea2836f, type: 2}
+  badSfxSounds:
+  - {fileID: 11400000, guid: 2496fd0853912744e9cf062378d1490c, type: 2}
+  musicSounds:
+  - {fileID: 11400000, guid: 2496fd0853912744e9cf062378d1490c, type: 2}
+  badMusicSounds:
+  - {fileID: 11400000, guid: 2496fd0853912744e9cf062378d1490c, type: 2}
+--- !u!4 &1584898408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584898406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0085323, y: -0.020173598, z: 1.7670833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1600220400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,6 +1937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a235344953007458d85a4a2cc60e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   models:
   - {fileID: 237036336}
   - {fileID: 1271143850}
@@ -2098,6 +2115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a235344953007458d85a4a2cc60e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   models:
   - {fileID: 1430667743}
   - {fileID: 789743842}
@@ -2248,6 +2266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2a01cf28c299c488df1993e1733380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   intervalDuration: 20
   lagDuration: 7
   currentDuration: 0
