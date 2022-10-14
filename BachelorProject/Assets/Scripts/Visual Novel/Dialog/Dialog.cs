@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Visual_Novel.Dialog
 {
-    [CreateAssetMenu(fileName = "Dialog", menuName = "Dialog", order = 0)]
-    public class Dialog : ScriptableObject
+    public class Dialog : MonoBehaviour
     {
-        public List<string> talkers; 
-        public List<string> dialogs;
+        [SerializeField] private List<GameObject> textBoxes;
+
+        public List<GameObject> TextBoxes => textBoxes;
     }
 }

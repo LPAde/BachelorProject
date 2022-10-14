@@ -1,14 +1,12 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 namespace Visual_Novel.Dialog
 {
     public class DialogManager : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI currentDialog;
-        [SerializeField] private TextMeshProUGUI currentTalker;
         [SerializeField] private List<Dialog> dialogs;
+        [SerializeField] private List<GameObject> textBoxes;
         [SerializeField] private int dialogIndex;
         [SerializeField] private int textIndex;
 
@@ -24,10 +22,15 @@ namespace Visual_Novel.Dialog
         public void UpdateDialog(int newDialogIndex)
         {
             dialogIndex = newDialogIndex;
-            textIndex = 0;
             
-            currentTalker.text = dialogs[dialogIndex].talkers[textIndex];
-            currentDialog.text = dialogs[dialogIndex].dialogs[textIndex];
+            for (int i = 0; i < dialogs.Count; i++)
+            {
+                dialogs[i].gameObject.SetActive(i == dialogIndex);
+            }
+            
+            textIndex = 0;
+            textBoxes = dialogs[dialogIndex].TextBoxes;
+            textBoxes[textIndex].SetActive(true);
         }
 
         /// <summary>
@@ -40,12 +43,11 @@ namespace Visual_Novel.Dialog
 
             textIndex++;
             
-            if(textIndex >= dialogs[dialogIndex].dialogs.Count)
+            if(textIndex >= dialogs[dialogIndex].TextBoxes.Count)
                 VisualNovelManager.Instance.EndDialog();
             else
             {
-                currentTalker.text = dialogs[dialogIndex].talkers[textIndex];
-                currentDialog.text = dialogs[dialogIndex].dialogs[textIndex];
+                textBoxes[textIndex].SetActive(true);
             }
         }
     }
