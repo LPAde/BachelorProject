@@ -33,7 +33,6 @@ namespace Jump_and_Run.Player
 
         #endregion
         
-
         #region Unity Methods
 
         private void Awake()

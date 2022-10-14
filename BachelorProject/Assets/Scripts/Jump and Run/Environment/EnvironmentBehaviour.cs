@@ -16,11 +16,7 @@ namespace Jump_and_Run.Environment
 
         private void Downgrade()
         {
-            if(!changer.firedDepartments[(int)GameDepartments.EnvironmentArt])
-                return;
-            
-            models[0].SetActive(false);
-            models[1].SetActive(true);
+            Destroy(!changer.firedDepartments[(int) GameDepartments.EnvironmentArt] ? models[1] : models[0]);
         }
     } 
 }
