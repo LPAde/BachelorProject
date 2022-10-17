@@ -14,7 +14,7 @@ namespace Credits
             scrollSpeed = (finalHeight.position.y - transform.position.y) * .025f;
         }
 
-        void Update()
+        private void Update()
         {
             MoveCredits();
         }

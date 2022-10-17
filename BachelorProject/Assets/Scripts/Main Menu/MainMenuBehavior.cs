@@ -13,6 +13,11 @@ namespace Main_Menu
 
         public void ChangeScene(int newScene)
         {
+            foreach (var btn in allButtons)
+            {
+                btn.interactable = false;
+            }
+            
             SceneManager.LoadScene(newScene);
         }
 
