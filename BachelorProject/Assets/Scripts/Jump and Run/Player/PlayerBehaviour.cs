@@ -11,6 +11,7 @@ namespace Jump_and_Run.Player
         #region Fields
 
         [SerializeField] private JumpAndRunChanger changer;
+        [SerializeField] private GameFeelManager gameFeelManager;
 
         [Header("Movement Stuff")] 
         [SerializeField] private float speed;
@@ -19,6 +20,7 @@ namespace Jump_and_Run.Player
         [SerializeField] private bool isGrounded;
         [SerializeField] private Rigidbody2D rigid;
         [SerializeField] private Vector3 currentRespawnPoint;
+        private bool _mayMove = true;
         
         [Header("Visual Stuff")] 
         [SerializeField] private List<GameObject> models;
@@ -86,6 +88,9 @@ namespace Jump_and_Run.Player
         /// </summary>
         private void CheckInputs()
         {
+            if(!_mayMove)
+                return;
+            
             if (Input.GetKeyDown(KeyCode.Space))
                 Jump();
 
@@ -98,6 +103,9 @@ namespace Jump_and_Run.Player
         /// </summary>
         private void Move()
         {
+            if(!_mayMove)
+                return;
+            
             float horizontalMovement = horizontalInput * speed * Time.fixedDeltaTime;
             rigid.velocity = new Vector2(horizontalMovement, rigid.velocity.y);
 
@@ -135,7 +143,10 @@ namespace Jump_and_Run.Player
         // Respawns the player.
         private void Respawn()
         {
+            _mayMove = false;
             transform.position = currentRespawnPoint;
+            rigid.velocity = Vector2.zero;
+            StartCoroutine(gameFeelManager.FadeToBlack());
         }
 
         /// <summary>
@@ -158,5 +169,10 @@ namespace Jump_and_Run.Player
         }
 
         #endregion
+
+        public void AllowMove()
+        {
+            _mayMove = true;
+        }
     }
 }

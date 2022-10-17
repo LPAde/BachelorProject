@@ -34,16 +34,17 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/VisualNovelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Downgradings/PerformanceRuiner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/JumpAndRunChanger.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Sound.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Misc/AudioManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Environment/EnvironmentBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/Dialog.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/EnemyBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Credits/CreditsBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Main Menu/MainMenuBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/GameFeelManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Sound.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Misc/AudioManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -94,7 +95,7 @@
       <workItem from="1664400434145" duration="916000" />
       <workItem from="1664901491698" duration="11583000" />
       <workItem from="1665677542492" duration="5416000" />
-      <workItem from="1665750902793" duration="7628000" />
+      <workItem from="1665750902793" duration="9971000" />
     </task>
     <servers />
   </component>

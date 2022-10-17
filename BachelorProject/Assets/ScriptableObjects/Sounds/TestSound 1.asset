@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: Jump
   clip: {fileID: 0}
+  mixer: {fileID: 5309989231212044042, guid: f686f65941cb25043b66b0649cefdb93, type: 2}
   volume: 0.153
   pitch: 1
   source: {fileID: 0}

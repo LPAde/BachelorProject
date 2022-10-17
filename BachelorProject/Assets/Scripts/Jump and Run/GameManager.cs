@@ -9,7 +9,7 @@ namespace Jump_and_Run
         [SerializeField] private JumpAndRunChanger changer;
         [SerializeField] private List<GameObject> levels;
         [SerializeField] private List<GameObject> downgradedLevels;
-        
+
         private void Awake()
         {
             LevelInitialize(changer.FiredDepartmentsCount);

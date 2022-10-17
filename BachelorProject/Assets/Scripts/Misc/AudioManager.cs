@@ -34,6 +34,7 @@ namespace Misc
                 sound.source = gameObject.AddComponent<AudioSource>();
 
                 sound.source.clip = sound.clip;
+                sound.source.outputAudioMixerGroup = sound.mixer;
                 
                 sound.source.volume = sound.volume;
                 sound.source.pitch = sound.pitch;
@@ -46,6 +47,7 @@ namespace Misc
                 music.source = gameObject.AddComponent<AudioSource>();
 
                 music.source.clip = music.clip;
+                music.source.outputAudioMixerGroup = music.mixer;
                 
                 music.source.volume = music.volume;
                 music.source.pitch = music.pitch;
@@ -103,6 +105,7 @@ namespace Misc
                 for (int i = 0; i < sfxSounds.Count; i++)
                 {
                     sfxSounds[i].source.clip = badSfxSounds[i].clip;
+                    sfxSounds[i].source.outputAudioMixerGroup = badSfxSounds[i].mixer;
                     sfxSounds[i].source.volume = badSfxSounds[i].volume;
                     sfxSounds[i].source.pitch = badSfxSounds[i].pitch;
                 }
@@ -113,6 +116,7 @@ namespace Misc
                 for (int i = 0; i < musicSounds.Count; i++)
                 {
                     musicSounds[i].source.clip = badMusicSounds[i].clip;
+                    musicSounds[i].source.outputAudioMixerGroup = badMusicSounds[i].mixer;
                     musicSounds[i].source.volume = badMusicSounds[i].volume;
                     musicSounds[i].source.pitch = badMusicSounds[i].pitch;
                 }

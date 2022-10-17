@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Misc
 {
@@ -7,6 +8,7 @@ namespace Misc
     {
         public string soundName;
         public AudioClip clip;
+        public AudioMixerGroup mixer;
         
         [Range(0f,1f)]
         public float volume;
