@@ -18,7 +18,7 @@ namespace Jump_and_Run.Player
         [SerializeField] private float horizontalInput;
         [SerializeField] private bool isGrounded;
         [SerializeField] private Rigidbody2D rigid;
-        [SerializeField] private Transform currentRespawnPoint;
+        [SerializeField] private Vector3 currentRespawnPoint;
         
         [Header("Visual Stuff")] 
         [SerializeField] private List<GameObject> models;
@@ -42,7 +42,7 @@ namespace Jump_and_Run.Player
 
         private void Start()
         {
-            currentRespawnPoint = transform;
+            currentRespawnPoint = transform.position;
         }
 
         private void Update()
@@ -63,8 +63,8 @@ namespace Jump_and_Run.Player
             if (other.CompareTag("Respawn"))
                 Respawn();
 
-            if (other.CompareTag("Respawn"))
-                currentRespawnPoint = other.transform;
+            if (other.CompareTag("GameController"))
+                currentRespawnPoint = other.transform.position;
         }
 
         private void OnCollisionStay2D(Collision2D other)
@@ -135,7 +135,7 @@ namespace Jump_and_Run.Player
         // Respawns the player.
         private void Respawn()
         {
-            transform.position = currentRespawnPoint.position;
+            transform.position = currentRespawnPoint;
         }
 
         /// <summary>
