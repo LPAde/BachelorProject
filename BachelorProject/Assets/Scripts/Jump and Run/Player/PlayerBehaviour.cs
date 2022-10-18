@@ -143,6 +143,7 @@ namespace Jump_and_Run.Player
         // Respawns the player.
         private void Respawn()
         {
+            // TODO: Reset Position after fading to black.
             _mayMove = false;
             transform.position = currentRespawnPoint;
             rigid.velocity = Vector2.zero;
