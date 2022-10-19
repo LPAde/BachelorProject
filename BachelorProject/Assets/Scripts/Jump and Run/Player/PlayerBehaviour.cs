@@ -19,6 +19,7 @@ namespace Jump_and_Run.Player
         [SerializeField] private float horizontalInput;
         [SerializeField] private bool isGrounded;
         [SerializeField] private Rigidbody2D rigid;
+        [SerializeField] private BoxCollider2D boxCollider;
         [SerializeField] private Vector3 currentRespawnPoint;
         private bool _mayMove = true;
         
@@ -143,10 +144,8 @@ namespace Jump_and_Run.Player
         // Respawns the player.
         private void Respawn()
         {
-            // TODO: Reset Position after fading to black.
-            _mayMove = false;
-            transform.position = currentRespawnPoint;
             rigid.velocity = Vector2.zero;
+            boxCollider.enabled = false;
             StartCoroutine(gameFeelManager.FadeToBlack());
         }
 
@@ -171,9 +170,21 @@ namespace Jump_and_Run.Player
 
         #endregion
 
+        #region Public Methods
+
+        public void ResetPosition()
+        { 
+            _mayMove = false;
+            transform.position = currentRespawnPoint;
+            boxCollider.enabled = true;
+        }
+        
         public void AllowMove()
         {
             _mayMove = true;
         }
+
+        #endregion
+        
     }
 }

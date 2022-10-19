@@ -329,6 +329,7 @@ MonoBehaviour:
   horizontalInput: 0
   isGrounded: 0
   rigid: {fileID: 261716477}
+  boxCollider: {fileID: 261716476}
   currentRespawnPoint: {x: 0, y: 0, z: 0}
   models:
   - {fileID: 703673592}
@@ -2531,6 +2532,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1166100036, guid: 049750e41fe78274bb4177d72530ce08, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166100036, guid: 049750e41fe78274bb4177d72530ce08, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166100036, guid: 049750e41fe78274bb4177d72530ce08, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3969119117638907738, guid: 049750e41fe78274bb4177d72530ce08, type: 3}
       propertyPath: m_Name
       value: Enemy

@@ -23,6 +23,7 @@ namespace Jump_and_Run
                 yield return new WaitForEndOfFrame();
             }
 
+            player.ResetPosition();
             yield return new WaitForSeconds(1);
             
             while (blackColor.color.a > 0)
