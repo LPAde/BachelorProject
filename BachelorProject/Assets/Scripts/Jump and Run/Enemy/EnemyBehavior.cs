@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Misc;
 using UnityEngine;
 using Visual_Novel;
 
@@ -25,6 +26,7 @@ namespace Jump_and_Run.Enemy
         private void Update()
         {
             Move();
+            CheckSound();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +41,21 @@ namespace Jump_and_Run.Enemy
         private void Move()
         {
             rb.velocity = movementVector;
+        }
+
+        /// <summary>
+        /// Checks if its sound should be played and plays it.
+        /// </summary>
+        private void CheckSound()
+        {
+            if(!render.isVisible)
+                return;
+            
+            if(AudioManager.Instance.CheckSoundPlaying("Enemy"))
+                return;
+
+            print("play");
+            AudioManager.Instance.PlaySound("Enemy");
         }
 
         private void Downgrade()

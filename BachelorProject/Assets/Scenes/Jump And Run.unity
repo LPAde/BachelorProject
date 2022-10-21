@@ -1858,8 +1858,10 @@ MonoBehaviour:
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   sfxSounds:
   - {fileID: 11400000, guid: 1ee26035c57e8754480d3f7f9ea2836f, type: 2}
+  - {fileID: 11400000, guid: c4ac4ba7e73ee60458151b29a2df2f4c, type: 2}
   badSfxSounds:
   - {fileID: 11400000, guid: 2496fd0853912744e9cf062378d1490c, type: 2}
+  - {fileID: 11400000, guid: 44b6e00df760b9b489a3072247a4e01c, type: 2}
   musicSounds:
   - {fileID: 11400000, guid: 2496fd0853912744e9cf062378d1490c, type: 2}
   badMusicSounds:
@@ -2134,7 +2136,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

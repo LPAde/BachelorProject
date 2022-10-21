@@ -70,7 +70,6 @@ namespace Misc
             // Check if it is a sfx sound.
             if (s == null)
             {
-                print("was null");
                 s = musicSounds.Find(sound => sound.soundName == soundName);
 
                 // Check is it is a music sound.
@@ -89,6 +88,34 @@ namespace Misc
             
             s.source.Play();
             return true;
+        }
+
+        /// <summary>
+        /// Checks if a specific sound is playing.
+        /// </summary>
+        /// <param name="soundName"> The sound you wanna check. </param>
+        /// <returns> If it is playing. </returns>
+        public bool CheckSoundPlaying(string soundName)
+        {
+            Sound s = sfxSounds.Find(sound => sound.soundName == soundName);
+            
+            // Check if it is a sfx sound.
+            if (s != null) 
+                return s.source.isPlaying;
+            
+            s = musicSounds.Find(sound => sound.soundName == soundName);
+
+            // Check is it is a music sound.
+            if (s == null)
+                return false;
+
+            // Stop all songs to avoid multiple playing at once.
+            foreach (var music in musicSounds)
+            {
+                music.source.Stop();
+            }
+                
+            return s.source.isPlaying;
         }
 
         /// <summary>
