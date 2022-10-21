@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,7 +23,6 @@ namespace Jump_and_Run.Player
         private bool _mayMove = true;
         
         [Header("Visual Stuff")] 
-        [SerializeField] private List<GameObject> models;
         [SerializeField] private Animator anim;
         [SerializeField] private Animator badAnim;
         [SerializeField] private SpriteRenderer spriteRenderer;
@@ -164,8 +162,6 @@ namespace Jump_and_Run.Player
 
             anim = badAnim;
             spriteRenderer = badSpriteRenderer;
-            models[0].SetActive(false);
-            models[1].SetActive(true);
         }
 
         #endregion

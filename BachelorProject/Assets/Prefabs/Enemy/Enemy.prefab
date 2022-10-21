@@ -169,7 +169,7 @@ Transform:
   - {fileID: 2578083961933396152}
   - {fileID: 7869986092750962314}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3969119117988144326
 GameObject:
@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 4399469056587042900}
   - component: {fileID: 7431704756558086094}
   - component: {fileID: 7749858334566789177}
+  - component: {fileID: 5827929582625555875}
   m_Layer: 0
   m_Name: Model
   m_TagString: Respawn
@@ -327,11 +328,7 @@ MonoBehaviour:
   movementVector: {x: 1, y: 0, z: 0}
   rb: {fileID: 7749858334566789177}
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
-  models:
-  - {fileID: 3969119117988144326}
-  - {fileID: 3969119116979210608}
   anim: {fileID: 3969119117988144324}
-  badAnim: {fileID: 3969119116979210622}
   render: {fileID: 1166100036}
   badRender: {fileID: 27683834}
 --- !u!61 &7431704756558086094
@@ -381,6 +378,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &5827929582625555875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160865102648505311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ac6bab249101e419d9018acf2ea442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
+  department: 1
+  models:
+  - {fileID: 3969119117988144326}
+  - {fileID: 3969119116979210608}
+  anim: {fileID: 3969119117988144324}
+  badAnim: {fileID: 3969119116979210622}
+  spriteRenderer: {fileID: 1166100036}
+  badSpriteRenderer: {fileID: 27683834}
 --- !u!1 &8880099033711204342
 GameObject:
   m_ObjectHideFlags: 0

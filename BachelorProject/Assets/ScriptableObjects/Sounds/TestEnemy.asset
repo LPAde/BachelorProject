@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestEnemy
   m_EditorClassIdentifier: 
   soundName: Enemy
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 2d002b12fa1bd5f488ad3e890db9d031, type: 3}
   mixer: {fileID: 1745199063355484868, guid: f686f65941cb25043b66b0649cefdb93, type: 2}
   volume: 0
   pitch: 1
