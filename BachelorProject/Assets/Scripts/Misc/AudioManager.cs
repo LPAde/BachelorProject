@@ -7,14 +7,21 @@ namespace Misc
 {
     public class AudioManager : MonoBehaviour
     {
-        public static AudioManager Instance;
-        [SerializeField] private JumpAndRunChanger changer;
+        #region Fields
 
+        public static AudioManager Instance;
+                
+        [SerializeField] private JumpAndRunChanger changer;
+        
         [SerializeField] private List<Sound> sfxSounds;
         [SerializeField] private List<Sound> badSfxSounds;
         
         [SerializeField] private List<Sound> musicSounds;
         [SerializeField] private List<Sound> badMusicSounds;
+
+        #endregion
+
+        #region Unity Methods
 
         private void Awake()
         {
@@ -24,39 +31,43 @@ namespace Misc
                 Destroy(gameObject);
                 return;
             }
-
+        
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
+        
             // Sound setup.
             foreach (var sound in sfxSounds)
             {
                 sound.source = gameObject.AddComponent<AudioSource>();
-
+        
                 sound.source.clip = sound.clip;
                 sound.source.outputAudioMixerGroup = sound.mixer;
                 
                 sound.source.volume = sound.volume;
                 sound.source.pitch = sound.pitch;
-
+        
                 sound.source.loop = false;
             }
             
             foreach (var music in musicSounds)
             {
                 music.source = gameObject.AddComponent<AudioSource>();
-
+        
                 music.source.clip = music.clip;
                 music.source.outputAudioMixerGroup = music.mixer;
                 
                 music.source.volume = music.volume;
                 music.source.pitch = music.pitch;
-
+        
                 music.source.loop = true;
             }
             
             SceneManager.sceneLoaded += CheckDownGrade;
         }
+
+        #endregion
+
+        #region Public Methods
 
         /// <summary>
         /// Plays a sound of your liking.
@@ -71,11 +82,11 @@ namespace Misc
             if (s == null)
             {
                 s = musicSounds.Find(sound => sound.soundName == soundName);
-
+        
                 // Check is it is a music sound.
                 if (s == null)
                     return false;
-
+        
                 // Stop all songs to avoid multiple playing at once.
                 foreach (var music in musicSounds)
                 {
@@ -89,7 +100,18 @@ namespace Misc
             s.source.Play();
             return true;
         }
-
+        
+        /// <summary>
+        /// Stops all other sounds and plays one.
+        /// </summary>
+        /// <param name="soundName"> The sound it shall play. </param>
+        /// <returns> Did it succeed? </returns>
+        public bool PlayOnlySound(string soundName)
+        {
+            StopAllSounds();
+            return PlaySound(soundName);
+        }
+        
         /// <summary>
         /// Checks if a specific sound is playing.
         /// </summary>
@@ -104,11 +126,11 @@ namespace Misc
                 return s.source.isPlaying;
             
             s = musicSounds.Find(sound => sound.soundName == soundName);
-
+        
             // Check is it is a music sound.
             if (s == null)
                 return false;
-
+        
             // Stop all songs to avoid multiple playing at once.
             foreach (var music in musicSounds)
             {
@@ -117,6 +139,10 @@ namespace Misc
                 
             return s.source.isPlaying;
         }
+
+        #endregion
+
+        #region Private Methods
 
         /// <summary>
         /// Checks if one of the important departments have been fired.
@@ -137,7 +163,7 @@ namespace Misc
                     sfxSounds[i].source.pitch = badSfxSounds[i].pitch;
                 }
             }
-
+        
             if (changer.firedDepartments[(int) GameDepartments.Music])
             {
                 for (int i = 0; i < musicSounds.Count; i++)
@@ -149,7 +175,7 @@ namespace Misc
                 }
             }
         }
-
+        
         /// <summary>
         /// Stops all sounds from playing.
         /// </summary>
@@ -167,5 +193,7 @@ namespace Misc
                 music.source.Stop();
             }
         }
+
+        #endregion
     }
 }

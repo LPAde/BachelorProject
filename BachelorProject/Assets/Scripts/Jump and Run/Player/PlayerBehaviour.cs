@@ -144,6 +144,7 @@ namespace Jump_and_Run.Player
         {
             rigid.velocity = Vector2.zero;
             boxCollider.enabled = false;
+            AudioManager.Instance.PlayOnlySound("Death");
             StartCoroutine(gameFeelManager.FadeToBlack());
         }
 
@@ -153,9 +154,7 @@ namespace Jump_and_Run.Player
         private void Downgrade()
         {
             if (changer.firedDepartments[(int) GameDepartments.Debugging])
-            {
                 isBuggy = true;
-            }
             
             if (!changer.firedDepartments[(int) GameDepartments.CharacterArt])
                 return;
