@@ -19,7 +19,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump and Run/Environment/EnvironmentBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/EnemyBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/Dialog.cs" root0="FORCE_HIGHLIGHTING" />
@@ -27,6 +26,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual Novel/JumpAndRunChanger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/Sound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump and Run/Downgradings/PerformanceRuiner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump and Run/ParallaxEffect.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -48,6 +48,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Downgradings/Downgrader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/AudioManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/ParallaxEffect.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -100,7 +101,8 @@
       <workItem from="1665677542492" duration="5416000" />
       <workItem from="1665750902793" duration="10670000" />
       <workItem from="1666189726160" duration="3251000" />
-      <workItem from="1666375012660" duration="2249000" />
+      <workItem from="1666375012660" duration="2567000" />
+      <workItem from="1666694686687" duration="1222000" />
     </task>
     <servers />
   </component>
