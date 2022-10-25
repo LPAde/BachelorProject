@@ -24,6 +24,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/Dialog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Credits/CreditsBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visual Novel/JumpAndRunChanger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/SpriteEditorModule/SpriteFrameModule/SpriteFrameModuleBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc/Sound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump and Run/Downgradings/PerformanceRuiner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump and Run/ParallaxEffect.cs" root0="FORCE_HIGHLIGHTING" />
@@ -102,7 +103,7 @@
       <workItem from="1665750902793" duration="10670000" />
       <workItem from="1666189726160" duration="3251000" />
       <workItem from="1666375012660" duration="2567000" />
-      <workItem from="1666694686687" duration="2323000" />
+      <workItem from="1666694686687" duration="2987000" />
     </task>
     <servers />
   </component>
