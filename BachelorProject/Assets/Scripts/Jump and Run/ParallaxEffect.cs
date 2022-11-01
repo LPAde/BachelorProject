@@ -13,12 +13,14 @@ namespace Jump_and_Run
         {
             startPos = transform.position;
             length = GetComponent<SpriteRenderer>().bounds.size.x;
+            cam = Camera.main.gameObject;
         }
 
         private void FixedUpdate()
         {
-            float temp = cam.transform.position.x * (1- parallaxValue);
-            float dist = cam.transform.position.x * parallaxValue;
+            var position = cam.transform.position;
+            float temp = position.x * (1- parallaxValue);
+            float dist = position.x * parallaxValue;
 
             transform.position = new Vector3(startPos.x + dist, startPos.y, startPos.z);
 
