@@ -991,7 +991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
-  intervalDuration: 20
+  intervalDuration: 12
   lagDuration: 7
   currentDuration: 0
 --- !u!4 &2029643092

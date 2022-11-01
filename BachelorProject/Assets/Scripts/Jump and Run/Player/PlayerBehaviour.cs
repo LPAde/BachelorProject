@@ -31,6 +31,8 @@ namespace Jump_and_Run.Player
         [Header("Buggy Stuff")]
         [SerializeField] private bool isBuggy;
         [SerializeField] private int jumpSuccessRate;
+        private static readonly int IsRunning = Animator.StringToHash("IsRunning");
+        private static readonly int Jump1 = Animator.StringToHash("Jump");
 
         #endregion
         
@@ -111,10 +113,16 @@ namespace Jump_and_Run.Player
             if (horizontalInput > 0)
             {
                 spriteRenderer.flipX = true;
+                anim.SetBool(IsRunning, true);
             }
             else if (horizontalInput < 0)
             {
                 spriteRenderer.flipX = false;
+                anim.SetBool(IsRunning, true);
+            }
+            else
+            {
+                anim.SetBool(IsRunning, false);
             }
         }
 
@@ -129,6 +137,7 @@ namespace Jump_and_Run.Player
                         return;
                 }
                 
+                anim.SetTrigger(Jump1);
                 rigid.AddForce(new Vector2(0, jumpStrength));
                 AudioManager.Instance.PlaySound("Jump");
             }
@@ -170,6 +179,7 @@ namespace Jump_and_Run.Player
         public void ResetPosition()
         { 
             _mayMove = false;
+            anim.SetBool(IsRunning, false);
             transform.position = currentRespawnPoint;
             boxCollider.enabled = true;
         }
