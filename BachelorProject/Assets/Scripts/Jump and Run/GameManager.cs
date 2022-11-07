@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Misc;
 using UnityEngine;
 using Visual_Novel;
 
@@ -13,6 +14,11 @@ namespace Jump_and_Run
         private void Awake()
         {
             LevelInitialize(changer.FiredDepartmentsCount);
+        }
+
+        private void Start()
+        {
+            AudioManager.Instance.PlaySound("Background Music");
         }
 
         /// <summary>

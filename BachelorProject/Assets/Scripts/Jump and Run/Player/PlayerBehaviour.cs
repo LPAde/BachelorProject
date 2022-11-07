@@ -112,12 +112,12 @@ namespace Jump_and_Run.Player
 
             if (horizontalInput > 0)
             {
-                spriteRenderer.flipX = true;
+                spriteRenderer.flipX = false;
                 anim.SetBool(IsRunning, true);
             }
             else if (horizontalInput < 0)
             {
-                spriteRenderer.flipX = false;
+                spriteRenderer.flipX = true;
                 anim.SetBool(IsRunning, true);
             }
             else

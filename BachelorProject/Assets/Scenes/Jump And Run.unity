@@ -201,7 +201,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.050023437, y: -0.9850575}
+  m_Offset: {x: 0.03838872, y: -1.0380598}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -212,7 +212,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.65314376, y: 0.88388443}
+  m_Size: {x: 0.4023518, y: 0.7778797}
   m_EdgeRadius: 0
 --- !u!50 &261716477
 Rigidbody2D:
@@ -311,7 +311,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c1962edd25ad70e44a9ed9b47e202840, type: 3}
+  m_Sprite: {fileID: 534007234, guid: 084e3616304928b43980f301b274fdf6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -740,7 +740,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2496fd0853912744e9cf062378d1490c, type: 2}
   - {fileID: 11400000, guid: 44b6e00df760b9b489a3072247a4e01c, type: 2}
   musicSounds:
-  - {fileID: 11400000, guid: 2496fd0853912744e9cf062378d1490c, type: 2}
+  - {fileID: 11400000, guid: d475d3a69bad1f64d9acfc5c8403f185, type: 2}
   badMusicSounds:
   - {fileID: 11400000, guid: 2496fd0853912744e9cf062378d1490c, type: 2}
 --- !u!4 &1584898408
