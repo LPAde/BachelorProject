@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Misc;
+using Unity.Mathematics;
 using UnityEngine;
 using Visual_Novel;
 
@@ -27,7 +28,7 @@ namespace Jump_and_Run
         /// <param name="finishedLevel"> How many levels have been finished so far. </param>
         private void LevelInitialize(int finishedLevel)
         {
-            Instantiate(changer.firedDepartments[(int) GameDepartments.GameDesign] ? downgradedLevels[finishedLevel] : levels[finishedLevel]);
+            Instantiate(changer.firedDepartments[(int) GameDepartments.GameDesign] ? downgradedLevels[finishedLevel] : levels[finishedLevel],Vector3.zero, Quaternion.identity,transform);
         }
     }
 }
