@@ -711,7 +711,7 @@ MonoBehaviour:
   musicSounds:
   - {fileID: 11400000, guid: d475d3a69bad1f64d9acfc5c8403f185, type: 2}
   badMusicSounds:
-  - {fileID: 11400000, guid: 2496fd0853912744e9cf062378d1490c, type: 2}
+  - {fileID: 11400000, guid: 89a8b839792e48847bac0ad2bc7ff873, type: 2}
 --- !u!4 &1584898408
 Transform:
   m_ObjectHideFlags: 0
