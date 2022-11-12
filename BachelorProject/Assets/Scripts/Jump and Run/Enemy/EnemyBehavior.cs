@@ -7,6 +7,7 @@ namespace Jump_and_Run.Enemy
     public class EnemyBehavior : MonoBehaviour
     {
         [SerializeField] private Vector3 movementVector;
+        [SerializeField] private Vector3 standardMovementVector;
         [SerializeField] private Rigidbody2D rb;
         
         [Header("Visual")]
@@ -31,6 +32,8 @@ namespace Jump_and_Run.Enemy
                 return;
             
             movementVector *= -1;
+            standardMovementVector.x *= -1;
+            
             render.flipX = !render.flipX;
         }
 
@@ -59,6 +62,18 @@ namespace Jump_and_Run.Enemy
                 return;
 
             render = badRender;
+        }
+
+        public void ChangeMovementVector()
+        {
+            if (movementVector != standardMovementVector)
+            {
+                movementVector = standardMovementVector;
+            }
+            else
+            {
+                movementVector = Vector3.zero;
+            }
         }
     }
 }
