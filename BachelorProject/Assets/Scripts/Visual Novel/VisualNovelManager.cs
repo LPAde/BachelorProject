@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,6 +19,11 @@ namespace Visual_Novel
         [SerializeField] private GameObject dialog;
         [SerializeField] private GameObject buttons;
         
+        [Header("Fade to black stuff")]
+        [SerializeField] private Image blackColor;
+        [SerializeField] private TextMeshProUGUI laterText;
+        [SerializeField] private float delay;
+        
         private bool _hasFired;
         
         private void Awake()
@@ -30,25 +37,6 @@ namespace Visual_Novel
         private void Start()
         {
             Initialize(changer.firedDepartments);
-        }
-
-        /// <summary>
-        /// Initializes the visual novel.
-        /// </summary>
-        /// <param name="currentState"></param>
-        private void Initialize(List<bool> currentState)
-        {
-            firedDepartments = currentState;
-
-            for (int i = 0; i < firedDepartments.Count; i++)
-            {
-                if (!firedDepartments[i])
-                    continue;
-                
-                fireButtons[i].interactable = false;
-            }
-            
-            dialogManager.UpdateDialog(changer.FiredDepartmentsCount);
         }
 
         /// <summary>
@@ -82,14 +70,56 @@ namespace Visual_Novel
         /// </summary>
         public void EndDialog()
         {
-            if(_hasFired)
-                SceneManager.LoadScene(1);
+            if (_hasFired)
+                StartCoroutine(FadeToBlack());
             else
             {
                 buttons.SetActive(true);
                 dialog.SetActive(false);
                 _hasFired = true;
             }
+        }
+
+        /// <summary>
+        /// Initializes the visual novel.
+        /// </summary>
+        /// <param name="currentState"></param>
+        private void Initialize(List<bool> currentState)
+        {
+            firedDepartments = currentState;
+
+            for (int i = 0; i < firedDepartments.Count; i++)
+            {
+                if (!firedDepartments[i])
+                    continue;
+                
+                fireButtons[i].interactable = false;
+            }
+            
+            dialogManager.UpdateDialog(changer.FiredDepartmentsCount);
+        }
+        
+        private IEnumerator FadeToBlack()
+        {
+            while (blackColor.color.a < 1)
+            {
+                var color = blackColor.color;
+                var textColor = laterText.color;
+                
+                color = new Color(color.r, color.g, color.b,
+                    color.a + Time.deltaTime*2);
+                textColor = new Color(textColor.r, textColor.g, textColor.b,
+                    textColor.a + Time.deltaTime*2);
+                
+                
+                blackColor.color = color;
+                laterText.color = textColor;
+                yield return new WaitForEndOfFrame();
+            }
+            
+            yield return new WaitForSeconds(delay);
+            
+            SceneManager.LoadScene(1);
         }
     }
 
