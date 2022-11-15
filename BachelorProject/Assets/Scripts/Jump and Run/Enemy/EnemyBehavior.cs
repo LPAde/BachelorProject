@@ -11,14 +11,7 @@ namespace Jump_and_Run.Enemy
         [SerializeField] private Rigidbody2D rb;
         
         [Header("Visual")]
-        [SerializeField] private JumpAndRunChanger changer;
         [SerializeField] private SpriteRenderer render;
-        [SerializeField] private SpriteRenderer badRender;
-
-        private void Awake()
-        {
-            Downgrade();
-        }
 
         private void Update()
         {
@@ -56,24 +49,12 @@ namespace Jump_and_Run.Enemy
             AudioManager.Instance.PlaySound("Enemy");
         }
 
-        private void Downgrade()
-        {
-            if(!changer.firedDepartments[(int)GameDepartments.CreatureArt])
-                return;
-
-            render = badRender;
-        }
-
+        /// <summary>
+        /// Animation event for stopping and walking again.
+        /// </summary>
         public void ChangeMovementVector()
         {
-            if (movementVector != standardMovementVector)
-            {
-                movementVector = standardMovementVector;
-            }
-            else
-            {
-                movementVector = Vector3.zero;
-            }
+            movementVector = movementVector != standardMovementVector ? standardMovementVector : Vector3.zero;
         }
     }
 }

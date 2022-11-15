@@ -110,19 +110,19 @@ namespace Jump_and_Run.Player
             float horizontalMovement = horizontalInput * speed * Time.fixedDeltaTime;
             rigid.velocity = new Vector2(horizontalMovement, rigid.velocity.y);
 
-            if (horizontalInput > 0)
+            switch (horizontalInput)
             {
-                spriteRenderer.flipX = false;
-                anim.SetBool(IsRunning, true);
-            }
-            else if (horizontalInput < 0)
-            {
-                spriteRenderer.flipX = true;
-                anim.SetBool(IsRunning, true);
-            }
-            else
-            {
-                anim.SetBool(IsRunning, false);
+                case > 0:
+                    spriteRenderer.flipX = false;
+                    anim.SetBool(IsRunning, true);
+                    break;
+                case < 0:
+                    spriteRenderer.flipX = true;
+                    anim.SetBool(IsRunning, true);
+                    break;
+                default:
+                    anim.SetBool(IsRunning, false);
+                    break;
             }
         }
 
