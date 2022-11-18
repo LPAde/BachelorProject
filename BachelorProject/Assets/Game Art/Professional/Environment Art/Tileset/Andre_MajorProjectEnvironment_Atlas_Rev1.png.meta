@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -5493,8 +5493,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Andre_MajorProjectEnvironment_Atlas_Rev1_230: -2048913953
-      Andre_MajorProjectEnvironment_Atlas_Rev1_150: 1158121060
+      Andre_MajorProjectEnvironment_Atlas_Rev1_240: -193221604
       Andre_MajorProjectEnvironment_Atlas_Rev1_28: -1614874624
       Andre_MajorProjectEnvironment_Atlas_Rev1_173: 268178273
       Andre_MajorProjectEnvironment_Atlas_Rev1_75: -1030999071
@@ -5512,6 +5511,7 @@ TextureImporter:
       Andre_MajorProjectEnvironment_Atlas_Rev1_235: -2083432247
       Andre_MajorProjectEnvironment_Atlas_Rev1_205: -1475920745
       Andre_MajorProjectEnvironment_Atlas_Rev1_166: 1995640
+      Andre_MajorProjectEnvironment_Atlas_Rev1_9: -1083369732
       Andre_MajorProjectEnvironment_Atlas_Rev1_17: 423670300
       Andre_MajorProjectEnvironment_Atlas_Rev1_52: 851088683
       Andre_MajorProjectEnvironment_Atlas_Rev1_179: 1277942648
@@ -5523,9 +5523,9 @@ TextureImporter:
       Andre_MajorProjectEnvironment_Atlas_Rev1_133: 2020792583
       Andre_MajorProjectEnvironment_Atlas_Rev1_183: 1369178380
       Andre_MajorProjectEnvironment_Atlas_Rev1_61: 424591423
-      Andre_MajorProjectEnvironment_Atlas_Rev1_38: 1972284140
       Andre_MajorProjectEnvironment_Atlas_Rev1_169: -832254635
       Andre_MajorProjectEnvironment_Atlas_Rev1_148: 326905483
+      Andre_MajorProjectEnvironment_Atlas_Rev1_125: -845942043
       Andre_MajorProjectEnvironment_Atlas_Rev1_204: -364066391
       Andre_MajorProjectEnvironment_Atlas_Rev1_242: -193098027
       Andre_MajorProjectEnvironment_Atlas_Rev1_192: 188130585
@@ -5728,27 +5728,27 @@ TextureImporter:
       Andre_MajorProjectEnvironment_Atlas_Rev1_62: -1764019428
       Andre_MajorProjectEnvironment_Atlas_Rev1_243: -1653008895
       Andre_MajorProjectEnvironment_Atlas_Rev1_171: 1266959080
-      Andre_MajorProjectEnvironment_Atlas_Rev1_97: 1351030443
+      Andre_MajorProjectEnvironment_Atlas_Rev1_112: -223395015
       Andre_MajorProjectEnvironment_Atlas_Rev1_139: 322278335
+      Andre_MajorProjectEnvironment_Atlas_Rev1_97: 1351030443
       Andre_MajorProjectEnvironment_Atlas_Rev1_147: 702209575
       Andre_MajorProjectEnvironment_Atlas_Rev1_128: -1467687728
-      Andre_MajorProjectEnvironment_Atlas_Rev1_85: 1524260742
-      Andre_MajorProjectEnvironment_Atlas_Rev1_118: -424481660
-      Andre_MajorProjectEnvironment_Atlas_Rev1_182: -648202814
-      Andre_MajorProjectEnvironment_Atlas_Rev1_223: -1200485677
-      Andre_MajorProjectEnvironment_Atlas_Rev1_96: 703920316
-      Andre_MajorProjectEnvironment_Atlas_Rev1_164: -534319134
-      Andre_MajorProjectEnvironment_Atlas_Rev1_112: -223395015
-      Andre_MajorProjectEnvironment_Atlas_Rev1_124: -2037187890
-      Andre_MajorProjectEnvironment_Atlas_Rev1_125: -845942043
-      Andre_MajorProjectEnvironment_Atlas_Rev1_58: -1997287950
-      Andre_MajorProjectEnvironment_Atlas_Rev1_108: -1195953566
+      Andre_MajorProjectEnvironment_Atlas_Rev1_38: 1972284140
       Andre_MajorProjectEnvironment_Atlas_Rev1_161: -205125626
-      Andre_MajorProjectEnvironment_Atlas_Rev1_170: 1743135647
-      Andre_MajorProjectEnvironment_Atlas_Rev1_196: -670254430
+      Andre_MajorProjectEnvironment_Atlas_Rev1_182: -648202814
+      Andre_MajorProjectEnvironment_Atlas_Rev1_108: -1195953566
       Andre_MajorProjectEnvironment_Atlas_Rev1_184: 1820487495
-      Andre_MajorProjectEnvironment_Atlas_Rev1_9: -1083369732
-      Andre_MajorProjectEnvironment_Atlas_Rev1_240: -193221604
+      Andre_MajorProjectEnvironment_Atlas_Rev1_164: -534319134
+      Andre_MajorProjectEnvironment_Atlas_Rev1_118: -424481660
+      Andre_MajorProjectEnvironment_Atlas_Rev1_223: -1200485677
+      Andre_MajorProjectEnvironment_Atlas_Rev1_85: 1524260742
+      Andre_MajorProjectEnvironment_Atlas_Rev1_150: 1158121060
+      Andre_MajorProjectEnvironment_Atlas_Rev1_124: -2037187890
+      Andre_MajorProjectEnvironment_Atlas_Rev1_58: -1997287950
+      Andre_MajorProjectEnvironment_Atlas_Rev1_196: -670254430
+      Andre_MajorProjectEnvironment_Atlas_Rev1_170: 1743135647
+      Andre_MajorProjectEnvironment_Atlas_Rev1_96: 703920316
+      Andre_MajorProjectEnvironment_Atlas_Rev1_230: -2048913953
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

@@ -2,6 +2,7 @@ using Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Visual_Novel;
+using Random = UnityEngine.Random;
 
 namespace Jump_and_Run.Player
 {
@@ -75,11 +76,19 @@ namespace Jump_and_Run.Player
                 currentRespawnPoint = other.transform.position;
         }
 
-        private void OnCollisionStay2D(Collision2D other)
+        private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Untagged"))
             {
                 groundedTimer = resetTimer;
+            }
+        }
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            if (!other.gameObject.CompareTag("Untagged"))
+            {
+                groundedTimer -= Time.deltaTime;
             }
         }
 
