@@ -14,13 +14,18 @@ namespace Jump_and_Run.Player
 
         [Header("Movement Stuff")] 
         [SerializeField] private float speed;
-        [SerializeField] private float jumpStrength;
         [SerializeField] private float horizontalInput;
-        [SerializeField] private bool isGrounded;
         [SerializeField] private Rigidbody2D rigid;
         [SerializeField] private BoxCollider2D boxCollider;
         [SerializeField] private Vector3 currentRespawnPoint;
         private bool _mayMove = true;
+        
+        [Header("Jump Stuff")]
+        [SerializeField] private float jumpStrength;
+        [SerializeField] private float jumpCut;
+        [SerializeField] private float timeTillJumpInput;
+        [SerializeField] private float groundedTimer;
+        [SerializeField] private float resetTimer;
         
         [Header("Visual Stuff")] 
         [SerializeField] private Animator anim;
@@ -72,12 +77,10 @@ namespace Jump_and_Run.Player
 
         private void OnCollisionStay2D(Collision2D other)
         {
-            isGrounded = other.gameObject.CompareTag("Untagged");
-        }
-
-        private void OnCollisionExit2D(Collision2D other)
-        {
-            isGrounded = !other.gameObject.CompareTag("Untagged");
+            if (other.gameObject.CompareTag("Untagged"))
+            {
+                groundedTimer = resetTimer;
+            }
         }
 
         #endregion
@@ -89,14 +92,24 @@ namespace Jump_and_Run.Player
         /// </summary>
         private void CheckInputs()
         {
+            timeTillJumpInput -= Time.deltaTime;
+            
             if(!_mayMove)
                 return;
             
             if (Input.GetKeyDown(KeyCode.Space))
-                Jump();
+                timeTillJumpInput = resetTimer;
 
             // Movement.
             horizontalInput = Input.GetAxis("Horizontal");
+            
+            if(timeTillJumpInput > 0 && groundedTimer > 0)
+                Jump();
+
+            if (Input.GetButtonUp("Jump") && rigid.velocity.y > 0)
+            {
+                rigid.velocity = new Vector2(rigid.velocity.x, jumpStrength*jumpCut);
+            }
         }
 
         /// <summary>
@@ -127,20 +140,20 @@ namespace Jump_and_Run.Player
         }
 
         private void Jump()
-        {
-            if (isGrounded)
+        { 
+            timeTillJumpInput = 0;
+            groundedTimer = 0;
+            
+            if (isBuggy)
             {
-                if (isBuggy)
-                {
-                    // Sometimes won't work when game is buggy.
-                    if(Random.Range(0, 100) > jumpSuccessRate)
-                        return;
-                }
-                
-                anim.SetTrigger(Jump1);
-                rigid.AddForce(new Vector2(0, jumpStrength));
-                AudioManager.Instance.PlaySound("Jump");
+                // Sometimes won't work when game is buggy.
+                if(Random.Range(0, 100) > jumpSuccessRate)
+                    return;
             }
+            
+            anim.SetTrigger(Jump1);
+            rigid.velocity = new Vector2(rigid.velocity.x, jumpStrength);
+            AudioManager.Instance.PlaySound("Jump");
         }
 
         private void FinishLevel()
@@ -181,7 +194,9 @@ namespace Jump_and_Run.Player
             _mayMove = false;
             anim.SetBool(IsRunning, false);
             transform.position = currentRespawnPoint;
+            rigid.velocity = Vector2.zero;
             boxCollider.enabled = true;
+            timeTillJumpInput = 0;
         }
         
         public void AllowMove()

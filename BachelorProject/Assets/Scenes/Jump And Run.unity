@@ -158,12 +158,15 @@ MonoBehaviour:
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   gameFeelManager: {fileID: 1279788830}
   speed: 500
-  jumpStrength: 300
   horizontalInput: 0
-  isGrounded: 0
   rigid: {fileID: 261716477}
   boxCollider: {fileID: 261716476}
   currentRespawnPoint: {x: 0, y: 0, z: 0}
+  jumpStrength: 6
+  jumpCut: 0.3
+  timeTillJumpInput: 0
+  groundedTimer: 0
+  resetTimer: 0.15
   anim: {fileID: 703673595}
   badAnim: {fileID: 2144676450}
   spriteRenderer: {fileID: 703673593}
@@ -231,9 +234,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &261716478
 MonoBehaviour:

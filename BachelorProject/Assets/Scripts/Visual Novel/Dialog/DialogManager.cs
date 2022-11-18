@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Visual_Novel.Dialog
 {
@@ -44,7 +45,14 @@ namespace Visual_Novel.Dialog
             textIndex++;
             
             if(textIndex >= dialogs[dialogIndex].TextBoxes.Count)
-                VisualNovelManager.Instance.EndDialog();
+            {
+                if(dialogIndex != 3)
+                    VisualNovelManager.Instance.EndDialog();
+                else
+                {
+                    SceneManager.LoadScene(3);
+                }
+            }
             else
             {
                 textBoxes[textIndex].SetActive(true);
