@@ -12,7 +12,7 @@ namespace Visual_Novel
     {
         public static VisualNovelManager Instance;
         [SerializeField] private JumpAndRunChanger changer;
-
+ 
         [SerializeField] private DialogManager dialogManager;
         [SerializeField] private List<bool> firedDepartments;
         [SerializeField] private List<Button> fireButtons;
