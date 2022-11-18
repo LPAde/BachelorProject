@@ -39,6 +39,7 @@ namespace Jump_and_Run.Player
         [SerializeField] private int jumpSuccessRate;
         private static readonly int IsRunning = Animator.StringToHash("IsRunning");
         private static readonly int Jump1 = Animator.StringToHash("Jump");
+        private static readonly int IsGrounded = Animator.StringToHash("IsGrounded");
 
         #endregion
         
@@ -81,6 +82,7 @@ namespace Jump_and_Run.Player
             if (other.gameObject.CompareTag("Untagged"))
             {
                 groundedTimer = resetTimer;
+                anim.SetBool(IsGrounded, true);
             }
         }
 
@@ -161,6 +163,7 @@ namespace Jump_and_Run.Player
             }
             
             anim.SetTrigger(Jump1);
+            anim.SetBool(IsGrounded, false);
             rigid.velocity = new Vector2(rigid.velocity.x, jumpStrength);
             AudioManager.Instance.PlaySound("Jump");
         }
