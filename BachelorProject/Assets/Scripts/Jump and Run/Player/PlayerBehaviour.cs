@@ -40,6 +40,8 @@ namespace Jump_and_Run.Player
         private static readonly int IsRunning = Animator.StringToHash("IsRunning");
         private static readonly int Jump1 = Animator.StringToHash("Jump");
         private static readonly int IsGrounded = Animator.StringToHash("IsGrounded");
+        private static readonly int Dies = Animator.StringToHash("Dies");
+        private static readonly int YVelo = Animator.StringToHash("YVelo");
 
         #endregion
         
@@ -58,6 +60,7 @@ namespace Jump_and_Run.Player
         private void Update()
         {
             CheckInputs();
+            anim.SetFloat(YVelo, rigid.velocity.y);
         }
 
         private void FixedUpdate()
@@ -179,6 +182,7 @@ namespace Jump_and_Run.Player
             rigid.velocity = Vector2.zero;
             boxCollider.enabled = false;
             AudioManager.Instance.PlayOnlySound("Death");
+            anim.SetTrigger(Dies);
             StartCoroutine(gameFeelManager.FadeToBlack());
         }
 
