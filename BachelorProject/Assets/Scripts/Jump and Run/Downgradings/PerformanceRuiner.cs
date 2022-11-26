@@ -44,7 +44,6 @@ namespace Jump_and_Run.Downgradings
                     else
                     {
                         Time.timeScale = rn;
-                        // TODO: Slow down animations maybe
                         currentDuration = Time.timeScale * lagDuration;
                     }
                 }

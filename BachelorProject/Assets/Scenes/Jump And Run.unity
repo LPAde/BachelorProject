@@ -157,12 +157,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   gameFeelManager: {fileID: 1279788830}
-  speed: 500
+  speed: 175
   horizontalInput: 0
   rigid: {fileID: 261716477}
   boxCollider: {fileID: 261716476}
   currentRespawnPoint: {x: 0, y: 0, z: 0}
-  jumpStrength: 6
+  dashTime: 0.2
+  currentDashTime: 0
+  canDash: 0
+  dashVector: {x: 15, y: 2}
+  jumpStrength: 7
   jumpCut: 0.3
   timeTillJumpInput: 0
   groundedTimer: 0
@@ -181,15 +185,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261716471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.34, z: 0}
+  m_LocalPosition: {x: -15, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1981960699}
   - {fileID: 703673594}
   - {fileID: 2144676449}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &261716476
 BoxCollider2D:
@@ -204,7 +207,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003270179, y: -0.010473013}
+  m_Offset: {x: -0.003270179, y: 0.07114339}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -215,7 +218,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4856696, y: 0.7963948}
+  m_Size: {x: 0.4856696, y: 0.633162}
   m_EdgeRadius: 0
 --- !u!50 &261716477
 Rigidbody2D:
@@ -313,13 +316,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 534007234, guid: 084e3616304928b43980f301b274fdf6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.81}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -391,8 +394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   levels:
-  - {fileID: 4155571961711052425, guid: 827e1ba0f5e40524eb372b72b343785d, type: 3}
   - {fileID: 4155571961711052425, guid: 69b63627b6a50db419d4a4026f0c0261, type: 3}
+  - {fileID: 4155571961711052425, guid: 827e1ba0f5e40524eb372b72b343785d, type: 3}
   - {fileID: 4155571961711052425, guid: 5140260c66f68d74490287e03ab3b813, type: 3}
   - {fileID: 4155571961711052425, guid: 3c15b0f6069255143a2ce3455bc9593d, type: 3}
   downgradedLevels:
@@ -415,7 +418,7 @@ Transform:
   - {fileID: 2029643092}
   - {fileID: 1279788829}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1279788828
 GameObject:
@@ -462,6 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 261716473}
+  cam: {fileID: 1981960701}
   blackColor: {fileID: 1587945673}
 --- !u!1 &1584898406
 GameObject:
@@ -516,7 +520,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1587945671
 GameObject:
@@ -614,6 +618,7 @@ GameObject:
   - component: {fileID: 1981960698}
   - component: {fileID: 1981960697}
   - component: {fileID: 1981960700}
+  - component: {fileID: 1981960701}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -680,13 +685,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981960696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.8, z: -10}
+  m_LocalPosition: {x: -13, y: 1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1587945672}
-  m_Father: {fileID: 261716475}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1981960700
 MonoBehaviour:
@@ -721,6 +726,24 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1981960701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981960696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7390220f5cc2704e8edb8f472378a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  player: {fileID: 261716471}
+  playerRigid: {fileID: 261716477}
+  threshold: {x: 0, y: 0}
+  followOffset: {x: 2.86, y: 1.12}
+  startVector: {x: 0, y: 0}
 --- !u!1 &2029643090
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +850,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1915818252, guid: 6042ca111bb39c74199a5fbf737480e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

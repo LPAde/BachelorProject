@@ -1,3 +1,5 @@
+using System.Collections;
+using Jump_and_Run.UX;
 using Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +23,13 @@ namespace Jump_and_Run.Player
         [SerializeField] private Vector3 currentRespawnPoint;
         private bool _mayMove = true;
         
+        [Header("Dash Stuff")]
+        [SerializeField] private float dashTime;
+        [SerializeField] private float currentDashTime;
+        [SerializeField] private bool canDash;
+        [SerializeField] private Vector2 dashVector;
+        
+        
         [Header("Jump Stuff")]
         [SerializeField] private float jumpStrength;
         [SerializeField] private float jumpCut;
@@ -37,11 +46,14 @@ namespace Jump_and_Run.Player
         [Header("Buggy Stuff")]
         [SerializeField] private bool isBuggy;
         [SerializeField] private int jumpSuccessRate;
+        
+        
         private static readonly int IsRunning = Animator.StringToHash("IsRunning");
         private static readonly int Jump1 = Animator.StringToHash("Jump");
         private static readonly int IsGrounded = Animator.StringToHash("IsGrounded");
         private static readonly int Dies = Animator.StringToHash("Dies");
         private static readonly int YVelo = Animator.StringToHash("YVelo");
+        private static readonly int Dash1 = Animator.StringToHash("Dash");
 
         #endregion
         
@@ -85,6 +97,7 @@ namespace Jump_and_Run.Player
             if (other.gameObject.CompareTag("Untagged"))
             {
                 groundedTimer = resetTimer;
+                canDash = false;
                 anim.SetBool(IsGrounded, true);
             }
         }
@@ -95,6 +108,12 @@ namespace Jump_and_Run.Player
             {
                 groundedTimer -= Time.deltaTime;
             }
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Untagged"))
+                canDash = true;
         }
 
         #endregion
@@ -124,6 +143,9 @@ namespace Jump_and_Run.Player
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpStrength*jumpCut);
             }
+
+            if (canDash && Input.GetKeyDown(KeyCode.LeftShift))
+                StartCoroutine(Dash());
         }
 
         /// <summary>
@@ -132,6 +154,9 @@ namespace Jump_and_Run.Player
         private void Move()
         {
             if(!_mayMove)
+                return;
+            
+            if(currentDashTime > 0)
                 return;
             
             float horizontalMovement = horizontalInput * speed * Time.fixedDeltaTime;
@@ -169,6 +194,22 @@ namespace Jump_and_Run.Player
             anim.SetBool(IsGrounded, false);
             rigid.velocity = new Vector2(rigid.velocity.x, jumpStrength);
             AudioManager.Instance.PlaySound("Jump");
+        }
+
+        private IEnumerator Dash()
+        {
+            canDash = false;
+            anim.SetTrigger(Dash1);
+            while (currentDashTime < dashTime)
+            {
+                currentDashTime += Time.deltaTime;
+                
+                rigid.velocity = !spriteRenderer.flipX ? new Vector2(dashVector.x, dashVector.y) : new Vector2(-dashVector.x, dashVector.y);
+                
+                yield return new WaitForEndOfFrame();
+            }
+
+            currentDashTime = 0;
         }
 
         private void FinishLevel()
