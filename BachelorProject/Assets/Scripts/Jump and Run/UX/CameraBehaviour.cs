@@ -7,6 +7,7 @@ namespace Jump_and_Run.UX
     {
         [SerializeField] private float speed;
         [SerializeField] private GameObject player;
+        [SerializeField] private GameObject bottomMin;
         [SerializeField] private Rigidbody2D playerRigid;
         [SerializeField] private Vector2 threshold;
         [SerializeField] private Vector2 followOffset;
@@ -50,7 +51,7 @@ namespace Jump_and_Run.UX
         /// </summary>
         private void Move()
         {
-            Vector2 follow = player.transform.position + Vector3.down *.25f ;
+            Vector2 follow = player.transform.position + Vector3.down *.4f ;
         
             var position = transform.position;
             float xDifference = Vector2.Distance(Vector2.right * position.x, Vector2.right * follow.x);
@@ -71,6 +72,10 @@ namespace Jump_and_Run.UX
             
             if (newPosition.y < startVector.y)
                 newPosition.y = startVector.y;
+
+            // Ensuring a min height.
+            if (player.transform.position.y < bottomMin.transform.position.y)
+                newPosition.y = bottomMin.transform.position.y;
             
             var velocity = playerRigid.velocity;
         
@@ -84,7 +89,7 @@ namespace Jump_and_Run.UX
         /// <summary>
         /// Sets the camera position manually.
         /// </summary>
-        /// <param name="newPosition"></param>
+        /// <param name="newPosition"> The position you want the camera to be moved to. </param>
         public void SetCameraPosition(Vector3 newPosition)
         {
             transform.position = newPosition;

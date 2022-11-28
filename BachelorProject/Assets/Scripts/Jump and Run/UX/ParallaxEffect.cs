@@ -16,7 +16,7 @@ namespace Jump_and_Run.UX
             cam = Camera.main.gameObject;
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             var position = cam.transform.position;
             float temp = position.x * (1- parallaxValue);
