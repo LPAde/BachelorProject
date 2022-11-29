@@ -49,11 +49,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" />
       <option value="$PROJECT_DIR$/Assets/CameraBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/GameFeelManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Sound.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Downgradings/PerformanceRuiner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/ParallaxEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/CameraBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -114,7 +114,7 @@
       <workItem from="1668211562765" duration="626000" />
       <workItem from="1668509400644" duration="11933000" />
       <workItem from="1669059287481" duration="14007000" />
-      <workItem from="1669669255362" duration="2684000" />
+      <workItem from="1669669255362" duration="2738000" />
     </task>
     <servers />
   </component>
