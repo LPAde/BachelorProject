@@ -109,7 +109,12 @@ namespace Misc
         /// <returns> Did it succeed? </returns>
         public bool PlayOnlySound(string soundName)
         {
-            StopAllSounds();
+            // Stop all sfx to avoid multiple playing at once.
+            foreach (var sfx in sfxSounds)
+            {
+                sfx.source.Stop();
+            }
+            
             return PlaySound(soundName);
         }
         
@@ -188,10 +193,10 @@ namespace Misc
                 music.source.Stop();
             }
             
-            // Stop all songs to avoid multiple playing at once.
-            foreach (var music in sfxSounds)
+            // Stop all sfx to avoid multiple playing at once.
+            foreach (var sfx in sfxSounds)
             {
-                music.source.Stop();
+                sfx.source.Stop();
             }
         }
 
