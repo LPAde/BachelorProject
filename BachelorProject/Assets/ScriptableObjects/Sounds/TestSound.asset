@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestSound
   m_EditorClassIdentifier: 
   soundName: Jump
-  clip: {fileID: 8300000, guid: 2d002b12fa1bd5f488ad3e890db9d031, type: 3}
+  clip: {fileID: 0}
   mixer: {fileID: 1745199063355484868, guid: f686f65941cb25043b66b0649cefdb93, type: 2}
   volume: 0.153
   pitch: 1
