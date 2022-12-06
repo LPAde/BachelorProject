@@ -1,6 +1,7 @@
 using Misc;
 using UnityEngine;
 using Visual_Novel;
+using Random = UnityEngine.Random;
 
 namespace Jump_and_Run.Enemy
 {
@@ -12,6 +13,16 @@ namespace Jump_and_Run.Enemy
         
         [Header("Visual")]
         [SerializeField] private SpriteRenderer render;
+        
+        [Header("Buggy Stuff")]
+        [SerializeField] private bool isBuggy;
+        [SerializeField] private int rotateSuccessRate;
+        [SerializeField] private JumpAndRunChanger changer;
+
+        private void Start()
+        {
+            Downgrade();
+        }
 
         private void Update()
         {
@@ -23,6 +34,11 @@ namespace Jump_and_Run.Enemy
         {
             if (!other.CompareTag("MainCamera"))
                 return;
+            
+            // Sometimes doesn't turn around.
+            if(isBuggy)
+                if(rotateSuccessRate < Random.Range(0,100))
+                    return;
             
             movementVector *= -1;
             standardMovementVector.x *= -1;
@@ -47,6 +63,15 @@ namespace Jump_and_Run.Enemy
                 return;
 
             AudioManager.Instance.PlaySound("Enemy");
+        }
+        
+        /// <summary>
+        /// Potentially makes the enemy buggy.
+        /// </summary>
+        private void Downgrade()
+        {
+            if (changer.firedDepartments[(int) GameDepartments.Debugging])
+                isBuggy = true;
         }
 
         /// <summary>

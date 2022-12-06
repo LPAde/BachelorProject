@@ -180,7 +180,6 @@ namespace Jump_and_Run.Player
         private void Jump()
         { 
             timeTillJumpInput = 0;
-            groundedTimer = 0;
             
             if (isBuggy)
             {
@@ -188,6 +187,8 @@ namespace Jump_and_Run.Player
                 if(Random.Range(0, 100) > jumpSuccessRate)
                     return;
             }
+            
+            groundedTimer = 0;
             
             anim.SetTrigger(Jump1);
             anim.SetBool(IsGrounded, false);

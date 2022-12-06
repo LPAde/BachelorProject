@@ -156,6 +156,9 @@ MonoBehaviour:
   standardMovementVector: {x: 1, y: 0, z: 0}
   rb: {fileID: 7749858334566789177}
   render: {fileID: 27683834}
+  isBuggy: 0
+  rotateSuccessRate: 90
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
 --- !u!61 &8698314077714639779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -213,7 +216,7 @@ Transform:
   - {fileID: 2578083961933396152}
   - {fileID: 7869986092750962314}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3969119117988144326
 GameObject:
@@ -338,6 +341,9 @@ MonoBehaviour:
   standardMovementVector: {x: 1, y: 0, z: 0}
   rb: {fileID: 7749858334566789177}
   render: {fileID: 1166100036}
+  isBuggy: 0
+  rotateSuccessRate: 90
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
 --- !u!58 &7927139239969074043
 CircleCollider2D:
   m_ObjectHideFlags: 0
