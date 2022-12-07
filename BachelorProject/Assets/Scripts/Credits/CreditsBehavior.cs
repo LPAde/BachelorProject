@@ -1,5 +1,8 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Visual_Novel;
 
 namespace Credits
 {
@@ -7,11 +10,14 @@ namespace Credits
     {
         [SerializeField] private float scrollSpeed;
         [SerializeField] private Transform finalHeight;
+        [SerializeField] private List<TextMeshProUGUI> people;
+        [SerializeField] private JumpAndRunChanger changer;
 
         private void Start()
         {
             // Prevent the resolution hurting the credit duration.
             scrollSpeed = (finalHeight.position.y - transform.position.y) * .025f;
+            FirePeople();
         }
 
         private void Update()
@@ -27,6 +33,18 @@ namespace Credits
                 return;
             
             SceneManager.LoadScene(0);
+        }
+
+        /// <summary>
+        /// Marks everyone that was fired red.
+        /// </summary>
+        private void FirePeople()
+        {
+            for (int i = 0; i < changer.FiredDepartmentsCount; i++)
+            {
+                if(changer.firedDepartments[i])
+                    people[i].color = Color.red;
+            }
         }
     }
 }

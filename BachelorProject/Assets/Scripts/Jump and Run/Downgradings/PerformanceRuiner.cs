@@ -1,20 +1,17 @@
 using System;
 using UnityEngine;
-using Visual_Novel;
 using Random = UnityEngine.Random;
 
 namespace Jump_and_Run.Downgradings
 {
     public class PerformanceRuiner : MonoBehaviour
     {
-        [SerializeField] private JumpAndRunChanger changer;
         [SerializeField] private float intervalDuration;
         [SerializeField] private float lagDuration;
         [SerializeField] private float currentDuration;
 
         private void Awake()
         {
-            Activate();
             currentDuration = intervalDuration;
         }
 
@@ -54,17 +51,6 @@ namespace Jump_and_Run.Downgradings
                     Time.timeScale = 1;
                 }
             }
-        }
-
-        /// <summary>
-        /// Activates this mischievous script.
-        /// </summary>
-        private void Activate()
-        {
-          if (changer.firedDepartments[(int) GameDepartments.PerformanceOptimisation])
-                return;
-
-          gameObject.SetActive(false);
         }
     }
 }
