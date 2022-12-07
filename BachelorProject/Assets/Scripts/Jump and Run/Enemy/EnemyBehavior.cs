@@ -1,3 +1,4 @@
+using System;
 using Misc;
 using UnityEngine;
 using Visual_Novel;
@@ -24,7 +25,7 @@ namespace Jump_and_Run.Enemy
             Downgrade();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             Move();
             CheckSound();
@@ -43,7 +44,8 @@ namespace Jump_and_Run.Enemy
             movementVector *= -1;
             standardMovementVector.x *= -1;
             
-            render.flipX = !render.flipX;
+            if(render != null)
+                render.flipX = !render.flipX;
         }
 
         private void Move()
@@ -56,6 +58,9 @@ namespace Jump_and_Run.Enemy
         /// </summary>
         private void CheckSound()
         {
+            if(render == null)
+                return;
+            
             if(!render.isVisible)
                 return;
             
