@@ -95,11 +95,11 @@ namespace Jump_and_Run.Player
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag("Untagged"))
+            if (other.gameObject.CompareTag("Untagged") && rigid.velocity.y == 0)
             {
+                anim.SetBool(IsGrounded, true);
                 groundedTimer = resetTimer;
                 canDash = false;
-                anim.SetBool(IsGrounded, true);
             }
         }
 
@@ -190,7 +190,7 @@ namespace Jump_and_Run.Player
                     return;
             }
             
-            groundedTimer = 0;
+            groundedTimer = -1;
             
             anim.SetTrigger(Jump1);
             anim.SetBool(IsGrounded, false);

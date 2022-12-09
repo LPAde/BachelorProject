@@ -48,12 +48,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/GameFeelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Sound.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/ParallaxEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Credits/CreditsBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Downgradings/PerformanceRuiner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/CameraBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/EnemyBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/AudioManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/VisualPlayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -119,6 +120,7 @@
       <workItem from="1670272600732" duration="609000" />
       <workItem from="1670285029984" duration="3710000" />
       <workItem from="1670440514969" duration="4357000" />
+      <workItem from="1670580781546" duration="854000" />
     </task>
     <servers />
   </component>
