@@ -57,6 +57,8 @@ namespace Jump_and_Run.Player
         private static readonly int Death = Animator.StringToHash("Death");
 
         #endregion
+
+        public Rigidbody2D Rigid => rigid;
         
         #region Unity Methods
 
@@ -91,6 +93,13 @@ namespace Jump_and_Run.Player
 
             if (other.CompareTag("GameController"))
                 currentRespawnPoint = other.transform.position;
+            
+            if (other.gameObject.CompareTag("Untagged"))
+            {
+                anim.SetBool(IsGrounded, true);
+                groundedTimer = resetTimer;
+                canDash = false;
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -159,8 +168,12 @@ namespace Jump_and_Run.Player
             
             if(currentDashTime > 0)
                 return;
-            
+
             float horizontalMovement = horizontalInput * speed * Time.fixedDeltaTime;
+            
+            if(horizontalMovement != 0)
+                rigid.isKinematic = false;
+            
             rigid.velocity = new Vector2(horizontalMovement, rigid.velocity.y);
 
             switch (horizontalInput)
@@ -180,7 +193,8 @@ namespace Jump_and_Run.Player
         }
 
         private void Jump()
-        { 
+        {
+            rigid.isKinematic = false;
             timeTillJumpInput = 0;
             
             if (isBuggy)

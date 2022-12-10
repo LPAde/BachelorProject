@@ -1,4 +1,3 @@
-using System;
 using Misc;
 using UnityEngine;
 using Visual_Novel;
@@ -8,7 +7,7 @@ namespace Jump_and_Run.Enemy
 {
     public class EnemyBehavior : MonoBehaviour
     {
-        [SerializeField] private Vector3 movementVector;
+        [SerializeField] protected Vector3 movementVector;
         [SerializeField] private Vector3 standardMovementVector;
         [SerializeField] private Rigidbody2D rb;
         
@@ -75,6 +74,9 @@ namespace Jump_and_Run.Enemy
         /// </summary>
         private void Downgrade()
         {
+            if(changer == null)
+                return;
+            
             if (changer.firedDepartments[(int) GameDepartments.Debugging])
                 isBuggy = true;
         }
