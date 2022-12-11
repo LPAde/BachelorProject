@@ -42,8 +42,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/ParallaxEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/GameFeelManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/VisualNovelManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" />
       <option value="$PROJECT_DIR$/Assets/CameraBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/GameFeelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/Sound.cs" />
@@ -57,6 +55,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/PlatformBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/ParallaxEffect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/VisualNovelManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -123,6 +123,7 @@
       <workItem from="1670285029984" duration="3710000" />
       <workItem from="1670440514969" duration="4357000" />
       <workItem from="1670580781546" duration="6111000" />
+      <workItem from="1670797277171" duration="1037000" />
     </task>
     <servers />
   </component>

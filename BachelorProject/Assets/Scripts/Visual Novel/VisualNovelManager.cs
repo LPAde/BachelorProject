@@ -18,6 +18,11 @@ namespace Visual_Novel
         [SerializeField] private List<Button> fireButtons;
         [SerializeField] private GameObject dialog;
         [SerializeField] private GameObject buttons;
+
+        [Header("Text Feel Stuff")]
+        [SerializeField] private Image backGround;
+        [SerializeField] private Image phone;
+        [SerializeField] private Animator phoneAnim;
         
         [Header("Fade to black stuff")]
         [SerializeField] private Image blackColor;
@@ -25,18 +30,14 @@ namespace Visual_Novel
         [SerializeField] private float delay;
         
         private bool _hasFired;
-        
+        private static readonly int MovePhoneAnim = Animator.StringToHash("MovePhone");
+
         private void Awake()
         {
             if(Instance != null)
                 Destroy(Instance.gameObject);
 
             Instance = this;
-        }
-
-        private void Start()
-        {
-            Initialize(changer.firedDepartments);
         }
 
         /// <summary>
@@ -61,7 +62,8 @@ namespace Visual_Novel
                 fireButtons[i].interactable = false;
                 firedAmount++;
             }
-            
+
+            phone.enabled = true;
             dialogManager.UpdateDialog(firedAmount);
         }
 
@@ -70,6 +72,8 @@ namespace Visual_Novel
         /// </summary>
         public void EndDialog()
         {
+            phone.enabled = false;
+            
             if (_hasFired)
                 StartCoroutine(FadeToBlack());
             else
@@ -78,6 +82,22 @@ namespace Visual_Novel
                 dialog.SetActive(false);
                 _hasFired = true;
             }
+        }
+
+        public void MovePhone()
+        {
+            phoneAnim.SetTrigger(MovePhoneAnim);
+            backGround.color = new Color(backGround.color.r, backGround.color.g, backGround.color.b,.5f);
+        }
+
+        public void PlayRing()
+        {
+            
+        }
+
+        public void StartDialog()
+        {
+            Initialize(changer.firedDepartments);
         }
 
         /// <summary>
