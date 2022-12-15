@@ -15,9 +15,6 @@ namespace Jump_and_Run.Enemy
 
                 if (playerBehavior == null)
                     playerBehavior = other.gameObject.GetComponent<PlayerBehaviour>();
-            
-                if(playerBehavior.Rigid.velocity.y != 0)
-                    playerBehavior.Rigid.isKinematic = true;
             }
         }
 
@@ -25,8 +22,7 @@ namespace Jump_and_Run.Enemy
         {
             if(other.gameObject.CompareTag("Player"))
             {
-                other.gameObject.transform.SetParent(null, true);
-                //  playerBehavior.Rigid.isKinematic = false;
+                other.gameObject.transform.SetParent(null, true); 
             }
         }
     }

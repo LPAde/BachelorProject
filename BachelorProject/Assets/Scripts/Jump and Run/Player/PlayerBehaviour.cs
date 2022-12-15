@@ -170,10 +170,7 @@ namespace Jump_and_Run.Player
                 return;
 
             float horizontalMovement = horizontalInput * speed * Time.fixedDeltaTime;
-            
-            if(horizontalMovement != 0)
-                rigid.isKinematic = false;
-            
+
             rigid.velocity = new Vector2(horizontalMovement, rigid.velocity.y);
 
             switch (horizontalInput)
@@ -194,7 +191,6 @@ namespace Jump_and_Run.Player
 
         private void Jump()
         {
-            rigid.isKinematic = false;
             timeTillJumpInput = 0;
             
             if (isBuggy)
@@ -205,7 +201,6 @@ namespace Jump_and_Run.Player
             }
             
             groundedTimer = -1;
-            
             anim.SetTrigger(Jump1);
             anim.SetBool(IsGrounded, false);
             rigid.velocity = new Vector2(rigid.velocity.x, jumpStrength);

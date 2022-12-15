@@ -76,7 +76,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3969119116979210608}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 29cfd6b2f6ee7df449da1689b8033e6e, type: 2}
   m_CullingMode: 0
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2028356305, guid: 28baad5c033cc8a448176ed70ed18527, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -156,6 +156,8 @@ MonoBehaviour:
   standardMovementVector: {x: 1, y: 0, z: 0}
   rb: {fileID: 7749858334566789177}
   render: {fileID: 27683834}
+  anim: {fileID: 3969119116979210622}
+  waitingTime: 1
   isBuggy: 0
   rotateSuccessRate: 90
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
@@ -261,7 +263,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3969119117988144326}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4c0630f87684ffd4089ee232f8859372, type: 2}
   m_CullingMode: 0
@@ -313,7 +315,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ce12865c01494c64b9e7786d3f05646c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -341,6 +343,8 @@ MonoBehaviour:
   standardMovementVector: {x: 1, y: 0, z: 0}
   rb: {fileID: 7749858334566789177}
   render: {fileID: 1166100036}
+  anim: {fileID: 3969119117988144324}
+  waitingTime: 7
   isBuggy: 0
   rotateSuccessRate: 90
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}

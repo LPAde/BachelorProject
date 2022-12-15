@@ -51,12 +51,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/VisualPlayer.cs" />
       <option value="$PROJECT_DIR$/Assets/PlatformBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/EnemyBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/PlatformBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/ParallaxEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/VisualNovelManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/PlatformBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/EnemyBehavior.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -74,6 +74,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build\BachelorProject.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\User\Desktop\GitHub Shit\BachelorProject\BachelorProject\BachelorProject\Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -124,6 +132,8 @@
       <workItem from="1670440514969" duration="4357000" />
       <workItem from="1670580781546" duration="6111000" />
       <workItem from="1670797277171" duration="1691000" />
+      <workItem from="1671051441768" duration="1389000" />
+      <workItem from="1671125884629" duration="3152000" />
     </task>
     <servers />
   </component>

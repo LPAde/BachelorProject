@@ -13,6 +13,8 @@ namespace Jump_and_Run.Enemy
         
         [Header("Visual")]
         [SerializeField] private SpriteRenderer render;
+        [SerializeField] private Animator anim;
+        [SerializeField] private float waitingTime;
         
         [Header("Buggy Stuff")]
         [SerializeField] private bool isBuggy;
@@ -49,6 +51,16 @@ namespace Jump_and_Run.Enemy
 
         private void Move()
         {
+            if (waitingTime > 0)
+            {
+                waitingTime -= Time.deltaTime;
+                
+                if (waitingTime < 0)
+                    anim.enabled = true;
+                
+                return;
+            }
+            
             rb.velocity = movementVector;
         }
 
@@ -74,6 +86,12 @@ namespace Jump_and_Run.Enemy
         /// </summary>
         private void Downgrade()
         {
+            // Tries making the enemies look more different.
+            waitingTime = Random.Range(0, waitingTime);
+            
+            if (waitingTime == 0)
+                anim.enabled = true;
+            
             if(changer == null)
                 return;
             
