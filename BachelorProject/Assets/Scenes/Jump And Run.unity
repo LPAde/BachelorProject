@@ -478,8 +478,8 @@ MonoBehaviour:
   - {fileID: 4155571961711052425, guid: fed6f415db17cf84c990ece68f6861a0, type: 3}
   downgradedLevels:
   - {fileID: 4155571961711052425, guid: 827e1ba0f5e40524eb372b72b343785d, type: 3}
-  - {fileID: 4155571961711052425, guid: 745bb526628ef0943ad57841a6f15ffa, type: 3}
   - {fileID: 4155571961711052425, guid: b5ee110dbb1810344b63660fdfb42ebc, type: 3}
+  - {fileID: 4155571961711052425, guid: 745bb526628ef0943ad57841a6f15ffa, type: 3}
   - {fileID: 4155571961711052425, guid: aaac6efce2573684685e83156edaaad4, type: 3}
 --- !u!4 &1076764443
 Transform:
