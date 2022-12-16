@@ -20,7 +20,7 @@ namespace Visual_Novel
         [SerializeField] private GameObject buttons;
 
         [Header("Text Feel Stuff")]
-        [SerializeField] private Image backGround;
+        [SerializeField] private List<GameObject> backGround;
         [SerializeField] private Image phone;
         [SerializeField] private Animator phoneAnim;
         
@@ -63,7 +63,8 @@ namespace Visual_Novel
                 firedAmount++;
             }
 
-            phone.enabled = true;
+            backGround[0].SetActive(false);
+            backGround[1].SetActive(true);
             dialogManager.UpdateDialog(firedAmount);
         }
 
@@ -73,6 +74,8 @@ namespace Visual_Novel
         public void EndDialog()
         {
             phone.enabled = false;
+            backGround[0].SetActive(true);
+            backGround[1].SetActive(false);
             
             if (_hasFired)
                 StartCoroutine(FadeToBlack());
@@ -87,7 +90,6 @@ namespace Visual_Novel
         public void MovePhone()
         {
             phoneAnim.SetTrigger(MovePhoneAnim);
-            backGround.color = new Color(backGround.color.r, backGround.color.g, backGround.color.b,.5f);
         }
 
         public void PlayRing()
@@ -97,6 +99,10 @@ namespace Visual_Novel
 
         public void StartDialog()
         {
+            backGround[0].SetActive(false);
+            backGround[0].GetComponent<Animator>().enabled = false;
+            backGround[1].SetActive(true);
+            phone.enabled = false;
             Initialize(changer.firedDepartments);
         }
 

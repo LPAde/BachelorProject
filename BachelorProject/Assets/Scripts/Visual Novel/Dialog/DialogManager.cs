@@ -39,6 +39,12 @@ namespace Visual_Novel.Dialog
         /// </summary>
         private void Inputs()
         {
+            if (textBoxes == null)
+                return;
+            
+            if(textBoxes.Count == 0)
+                return;
+            
             if(!Input.GetKeyDown(KeyCode.Return))
                 return;
 
