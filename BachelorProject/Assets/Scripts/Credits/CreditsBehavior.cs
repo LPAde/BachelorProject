@@ -40,10 +40,13 @@ namespace Credits
         /// </summary>
         private void FirePeople()
         {
-            for (int i = 0; i < changer.FiredDepartmentsCount; i++)
+            for (int i = 0; i < people.Count; i++)
             {
                 if(changer.firedDepartments[i])
+                {
+                    print(i);
                     people[i].color = Color.red;
+                }
             }
         }
     }

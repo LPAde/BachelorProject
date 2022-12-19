@@ -22,8 +22,9 @@ namespace Jump_and_Run.UX
             float temp = position.x * (1- parallaxValue);
             float dist = position.x * parallaxValue;
 
+            float goalY = position.y < startPos.y ? position.y : startPos.y;
             
-            transform.position = new Vector3(startPos.x + dist, startPos.y, startPos.z);
+            transform.position = new Vector3(startPos.x + dist, goalY, startPos.z);
 
             if (temp > startPos.x + length) startPos.x += length;
             else if (temp < startPos.x - length) startPos.x -= length;

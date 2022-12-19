@@ -564,14 +564,14 @@ MonoBehaviour:
   scrollSpeed: 0
   finalHeight: {fileID: 961834612}
   people:
-  - {fileID: 389281944}
-  - {fileID: 1223182609}
-  - {fileID: 1201813087}
   - {fileID: 990107522}
-  - {fileID: 1348598970}
-  - {fileID: 64066198}
+  - {fileID: 389281944}
+  - {fileID: 1201813087}
   - {fileID: 1418009368}
+  - {fileID: 1223182609}
+  - {fileID: 1348598970}
   - {fileID: 30230686}
+  - {fileID: 2043822239}
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
 --- !u!1 &389281942
 GameObject:

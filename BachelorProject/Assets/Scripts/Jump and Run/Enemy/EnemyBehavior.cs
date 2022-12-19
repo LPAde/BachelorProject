@@ -89,7 +89,7 @@ namespace Jump_and_Run.Enemy
             // Tries making the enemies look more different.
             waitingTime = Random.Range(0, waitingTime);
             
-            if (waitingTime == 0)
+            if (waitingTime == 0 && anim != null)
                 anim.enabled = true;
             
             if(changer == null)
