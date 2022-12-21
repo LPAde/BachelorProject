@@ -44,7 +44,6 @@ namespace Credits
             {
                 if(changer.firedDepartments[i])
                 {
-                    print(i);
                     people[i].color = Color.red;
                 }
             }

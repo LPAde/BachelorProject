@@ -6713,7 +6713,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5796670658388989407}
   - component: {fileID: 734396628595845156}
-  - component: {fileID: 7230509392030340803}
   m_Layer: 0
   m_Name: Background_Sky_01 (1)
   m_TagString: Untagged
@@ -6788,22 +6787,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7230509392030340803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061782568049222438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48501030386d1ec489913804907d0e94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  length: 0
-  parallaxValue: 0
-  startPos: {x: 0, y: 0, z: 0}
-  cam: {fileID: 0}
 --- !u!1 &2084842101963797493
 GameObject:
   m_ObjectHideFlags: 0
@@ -23476,7 +23459,6 @@ GameObject:
   m_Component:
   - component: {fileID: 571683464301765039}
   - component: {fileID: 8509664201491655971}
-  - component: {fileID: 3525426151916895555}
   m_Layer: 0
   m_Name: Background_Sky_01 (2)
   m_TagString: Untagged
@@ -23551,22 +23533,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3525426151916895555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5402412114929723457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48501030386d1ec489913804907d0e94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  length: 0
-  parallaxValue: 0
-  startPos: {x: 0, y: 0, z: 0}
-  cam: {fileID: 0}
 --- !u!1 &5515517280558997461
 GameObject:
   m_ObjectHideFlags: 0
@@ -24721,7 +24687,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5657430788339550575}
   - component: {fileID: 4119561654838887042}
-  - component: {fileID: 9038985230454607581}
   m_Layer: 0
   m_Name: Background_Sky_01 (3)
   m_TagString: Untagged
@@ -24796,22 +24761,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9038985230454607581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7482676306273303556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48501030386d1ec489913804907d0e94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  length: 0
-  parallaxValue: 0
-  startPos: {x: 0, y: 0, z: 0}
-  cam: {fileID: 0}
 --- !u!1 &7515889918892138738
 GameObject:
   m_ObjectHideFlags: 0
