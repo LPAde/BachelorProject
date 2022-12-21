@@ -217,8 +217,8 @@ TextureImporter:
         serializedVersion: 2
         x: 551
         y: 678
-        width: 301
-        height: 319
+        width: 270
+        height: 279
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: Mssg 1_6
       rect:
         serializedVersion: 2
-        x: 1064
+        x: 1095
         y: 678
-        width: 301
-        height: 319
+        width: 270
+        height: 279
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,6 +337,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Mssg 1_11
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 743
+        width: 186
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc2e97937d97a84ba3cb0b4a5e3041c
+      internalID: 1122553174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -359,6 +380,7 @@ TextureImporter:
       Mssg 1_9: -1201316507
       Mssg 1_7: 1352802361
       Mssg 1_6: 80019272
+      Mssg 1_11: 1122553174
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
