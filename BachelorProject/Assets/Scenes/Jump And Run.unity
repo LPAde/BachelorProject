@@ -170,7 +170,7 @@ MonoBehaviour:
   jumpCut: 0.3
   timeTillJumpInput: 0
   groundedTimer: 0
-  resetTimer: 0.1
+  resetTimer: 0.15
   anim: {fileID: 703673595}
   badAnim: {fileID: 2144676450}
   spriteRenderer: {fileID: 703673593}
@@ -203,11 +203,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 261716471}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a23235d601c29a54b87bec82f470c2f6, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003270179, y: 0.07114339}
+  m_Offset: {x: 0.032017708, y: 0.07114339}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -218,7 +218,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4856696, y: 0.633162}
+  m_Size: {x: 0.16493034, y: 0.633162}
   m_EdgeRadius: 0
 --- !u!50 &261716477
 Rigidbody2D:
@@ -472,9 +472,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   levels:
-  - {fileID: 4155571961711052425, guid: 827e1ba0f5e40524eb372b72b343785d, type: 3}
-  - {fileID: 4155571961711052425, guid: 69b63627b6a50db419d4a4026f0c0261, type: 3}
   - {fileID: 4155571961711052425, guid: a4b475abd8c6b984fae1ef7e0474b0a3, type: 3}
+  - {fileID: 4155571961711052425, guid: 69b63627b6a50db419d4a4026f0c0261, type: 3}
+  - {fileID: 4155571961711052425, guid: 827e1ba0f5e40524eb372b72b343785d, type: 3}
   - {fileID: 4155571961711052425, guid: fed6f415db17cf84c990ece68f6861a0, type: 3}
   downgradedLevels:
   - {fileID: 4155571961711052425, guid: 827e1ba0f5e40524eb372b72b343785d, type: 3}
@@ -752,8 +752,8 @@ Camera:
   m_GameObject: {fileID: 1981960696}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

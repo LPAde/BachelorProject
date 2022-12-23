@@ -49,14 +49,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/VisualPlayer.cs" />
       <option value="$PROJECT_DIR$/Assets/PlatformBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/PlatformBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/Dialog/DialogManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/VisualNovelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/EnemyBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/JumpAndRunChanger.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/ParallaxEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Credits/CreditsBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/ParallaxEffect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -135,7 +135,7 @@
       <workItem from="1671051441768" duration="1389000" />
       <workItem from="1671125884629" duration="5792000" />
       <workItem from="1671389737716" duration="4512000" />
-      <workItem from="1671661688077" duration="636000" />
+      <workItem from="1671661688077" duration="4584000" />
     </task>
     <servers />
   </component>

@@ -75,7 +75,6 @@ namespace Jump_and_Run.Player
         private void Update()
         {
             CheckInputs();
-            anim.SetFloat(YVelo, rigid.velocity.y);
         }
 
         private void FixedUpdate()
@@ -107,23 +106,18 @@ namespace Jump_and_Run.Player
             if (other.gameObject.CompareTag("Untagged") && rigid.velocity.y == 0)
             {
                 anim.SetBool(IsGrounded, true);
-                groundedTimer = resetTimer;
+                groundedTimer = 1;
                 canDash = false;
             }
         }
-
-        private void OnCollisionStay2D(Collision2D other)
-        {
-            if (!other.gameObject.CompareTag("Untagged"))
-            {
-                groundedTimer -= Time.deltaTime;
-            }
-        }
-
+        
         private void OnCollisionExit2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Untagged"))
+            {
                 canDash = true;
+                groundedTimer = resetTimer;
+            }
         }
 
         #endregion
@@ -135,7 +129,12 @@ namespace Jump_and_Run.Player
         /// </summary>
         private void CheckInputs()
         {
+            anim.SetFloat(YVelo, rigid.velocity.y);
+            
             timeTillJumpInput -= Time.deltaTime;
+
+            if (groundedTimer <= resetTimer)
+                groundedTimer -= Time.deltaTime;
             
             if(!_mayMove)
                 return;

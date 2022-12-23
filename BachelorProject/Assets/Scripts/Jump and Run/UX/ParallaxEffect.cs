@@ -6,6 +6,7 @@ namespace Jump_and_Run.UX
     {
         [SerializeField] private float length;
         [SerializeField] private float parallaxValue;
+        [SerializeField] private float camDist;
         [SerializeField] private Vector3 startPos;
         [SerializeField] private GameObject cam;
 
@@ -14,6 +15,7 @@ namespace Jump_and_Run.UX
             startPos = transform.position;
             length = GetComponent<SpriteRenderer>().bounds.size.x;
             cam = Camera.main.gameObject;
+            camDist = startPos.y - cam.gameObject.transform.position.y;
         }
 
         private void LateUpdate()
@@ -22,8 +24,12 @@ namespace Jump_and_Run.UX
             float temp = position.x * (1- parallaxValue);
             float dist = position.x * parallaxValue;
 
-            float goalY = position.y < startPos.y ? position.y : startPos.y;
-            
+            float goalY;
+            if (startPos.y - position.y > camDist)
+                goalY = position.y + camDist;
+            else
+                goalY = startPos.y;
+
             transform.position = new Vector3(startPos.x + dist, goalY, startPos.z);
 
             if (temp > startPos.x + length) startPos.x += length;
