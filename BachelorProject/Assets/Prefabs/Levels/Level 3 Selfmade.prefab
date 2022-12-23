@@ -372,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 0
   parallaxValue: 0.15
+  camDist: 0
   startPos: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!1 &594572859605973091
@@ -2133,6 +2134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 0
   parallaxValue: 0.3
+  camDist: 0
   startPos: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!1 &1575144439180022272
@@ -3099,6 +3101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 0
   parallaxValue: 0.3
+  camDist: 0
   startPos: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!1 &2061782568049222438
@@ -14802,6 +14805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 0
   parallaxValue: 0
+  camDist: 0
   startPos: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!1 &5964995929188701845
@@ -15233,6 +15237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 0
   parallaxValue: 0
+  camDist: 0
   startPos: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!1 &6708190567751465187
@@ -15723,6 +15728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 0
   parallaxValue: 0.15
+  camDist: 0
   startPos: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!1 &7734582258031156514
@@ -15912,6 +15918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 0
   parallaxValue: 0
+  camDist: 0
   startPos: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!1 &7969969743410922708
@@ -16017,6 +16024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 0
   parallaxValue: 0
+  camDist: 0
   startPos: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!1 &8231072559954415378
@@ -17016,7 +17024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4213341321453787456, guid: 890b7a7ae650f414593da98d4e954bfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 7.951
       objectReference: {fileID: 0}
     - target: {fileID: 4213341321453787456, guid: 890b7a7ae650f414593da98d4e954bfb, type: 3}
       propertyPath: m_LocalPosition.z

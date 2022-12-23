@@ -65,6 +65,7 @@ namespace Visual_Novel
 
             backGround[0].SetActive(false);
             backGround[1].SetActive(true);
+            backGround[2].SetActive(false);
             dialogManager.UpdateDialog(firedAmount);
         }
 
@@ -74,8 +75,9 @@ namespace Visual_Novel
         public void EndDialog()
         {
             phone.enabled = false;
-            backGround[0].SetActive(true);
+            backGround[0].SetActive(false);
             backGround[1].SetActive(false);
+            backGround[2].SetActive(true);
             
             if (_hasFired)
                 StartCoroutine(FadeToBlack());
