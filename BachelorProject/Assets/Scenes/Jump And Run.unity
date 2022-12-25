@@ -472,9 +472,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
   levels:
-  - {fileID: 4155571961711052425, guid: a4b475abd8c6b984fae1ef7e0474b0a3, type: 3}
-  - {fileID: 4155571961711052425, guid: 69b63627b6a50db419d4a4026f0c0261, type: 3}
   - {fileID: 4155571961711052425, guid: 827e1ba0f5e40524eb372b72b343785d, type: 3}
+  - {fileID: 4155571961711052425, guid: 69b63627b6a50db419d4a4026f0c0261, type: 3}
+  - {fileID: 4155571961711052425, guid: a4b475abd8c6b984fae1ef7e0474b0a3, type: 3}
   - {fileID: 4155571961711052425, guid: fed6f415db17cf84c990ece68f6861a0, type: 3}
   downgradedLevels:
   - {fileID: 4155571961711052425, guid: 827e1ba0f5e40524eb372b72b343785d, type: 3}
