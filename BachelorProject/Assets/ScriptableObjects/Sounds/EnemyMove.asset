@@ -15,6 +15,6 @@ MonoBehaviour:
   soundName: Enemy
   clip: {fileID: 8300000, guid: 115045903d72d3849afb9f7306abe6af, type: 3}
   mixer: {fileID: 1745199063355484868, guid: f686f65941cb25043b66b0649cefdb93, type: 2}
-  volume: 1
+  volume: 0.6
   pitch: 1
   source: {fileID: 0}

@@ -10,11 +10,12 @@ namespace Jump_and_Run.Enemy
         [SerializeField] protected Vector3 movementVector;
         [SerializeField] private Vector3 standardMovementVector;
         [SerializeField] private Rigidbody2D rb;
-        
+
         [Header("Visual")]
         [SerializeField] private SpriteRenderer render;
         [SerializeField] private Animator anim;
         [SerializeField] private float waitingTime;
+        [SerializeField] private bool mayPlaySound;
         
         [Header("Buggy Stuff")]
         [SerializeField] private bool isBuggy;
@@ -72,13 +73,7 @@ namespace Jump_and_Run.Enemy
             if(render == null)
                 return;
             
-            if(!render.isVisible)
-                return;
-            
-            if(AudioManager.Instance.CheckSoundPlaying("Enemy"))
-                return;
-
-            AudioManager.Instance.PlaySound("Enemy");
+            mayPlaySound = render.isVisible;
         }
         
         /// <summary>
@@ -105,6 +100,20 @@ namespace Jump_and_Run.Enemy
         public void ChangeMovementVector()
         {
             movementVector = movementVector != standardMovementVector ? standardMovementVector : Vector3.zero;
+        }
+
+        /// <summary>
+        /// Animation event for movement.
+        /// </summary>
+        public void PlaySound()
+        {
+            if(!mayPlaySound)
+                return;
+            
+            if(AudioManager.Instance.CheckSoundPlaying("Enemy"))
+                return;
+
+            AudioManager.Instance.PlaySound("Enemy");
         }
     }
 }
