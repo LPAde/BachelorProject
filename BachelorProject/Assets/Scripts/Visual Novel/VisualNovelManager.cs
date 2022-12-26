@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Misc;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -46,6 +47,7 @@ namespace Visual_Novel
         /// <param name="department"> The department you want to fire. </param>
         public void FireDepartment(int department)
         {
+            AudioManager.Instance.PlaySound("UI");
             firedDepartments[department] = true;
             changer.FireDepartment((GameDepartments)department);
             buttons.SetActive(false);
@@ -96,7 +98,7 @@ namespace Visual_Novel
 
         public void PlayRing()
         {
-            
+            AudioManager.Instance.PlaySound("Phone");
         }
 
         public void StartDialog()

@@ -186,6 +186,10 @@ namespace Jump_and_Run.Player
                     anim.SetBool(IsRunning, false);
                     break;
             }
+            if(AudioManager.Instance.CheckSoundPlaying("Step"))
+                return;
+
+            AudioManager.Instance.PlaySound("Step");
         }
 
         private void Jump()
@@ -208,6 +212,7 @@ namespace Jump_and_Run.Player
 
         private IEnumerator Dash()
         {
+            AudioManager.Instance.PlaySound("Dash");
             canDash = false;
             anim.SetTrigger(Dash1);
             while (currentDashTime < dashTime)
@@ -272,7 +277,7 @@ namespace Jump_and_Run.Player
         {
             _mayMove = true;
         }
-
+        
         #endregion
         
     }

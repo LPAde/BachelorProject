@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allButtons: []
-  mixer: {fileID: 0}
+  newScene: 0
 --- !u!4 &184608444
 Transform:
   m_ObjectHideFlags: 0
@@ -531,8 +531,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1195943705}
+  m_Children: []
   m_Father: {fileID: 1987632145}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -577,8 +576,8 @@ Camera:
   m_GameObject: {fileID: 450076006}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1265,7 +1264,7 @@ RectTransform:
   m_Children:
   - {fileID: 806878776}
   - {fileID: 707660949}
-  m_Father: {fileID: 302051464}
+  m_Father: {fileID: 1987632145}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1686,6 +1685,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615032293}
   m_CullTransparentMesh: 1
+--- !u!1 &1943220125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943220127}
+  - component: {fileID: 1943220126}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1943220126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943220125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e674c82612f5f439270ffed7838584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changer: {fileID: 11400000, guid: ef5b547d22bbdbd41acff073d6408c4c, type: 2}
+  sfxSounds:
+  - {fileID: 11400000, guid: f5b24849422e0df4b8caf8808890b19a, type: 2}
+  - {fileID: 11400000, guid: 7f44c4abe3e5f2d4dacdf43b7e9a3814, type: 2}
+  - {fileID: 11400000, guid: 7823e55ea76aff44dae2da7bb1cf54fc, type: 2}
+  - {fileID: 11400000, guid: d475d3a69bad1f64d9acfc5c8403f185, type: 2}
+  - {fileID: 11400000, guid: c269eeebfa74f0b4dbce0d3c29a487db, type: 2}
+  - {fileID: 11400000, guid: b7169afd352d60b40a4611df64a6fbdd, type: 2}
+  - {fileID: 11400000, guid: 35c041272aab0de4fa7d09edb9de6839, type: 2}
+  - {fileID: 11400000, guid: bd5a1dd845cb13b47a543edfc285ffe4, type: 2}
+  badSfxSounds:
+  - {fileID: 11400000, guid: f5b24849422e0df4b8caf8808890b19a, type: 2}
+  - {fileID: 11400000, guid: 7f44c4abe3e5f2d4dacdf43b7e9a3814, type: 2}
+  - {fileID: 11400000, guid: 7823e55ea76aff44dae2da7bb1cf54fc, type: 2}
+  - {fileID: 11400000, guid: d475d3a69bad1f64d9acfc5c8403f185, type: 2}
+  - {fileID: 11400000, guid: c269eeebfa74f0b4dbce0d3c29a487db, type: 2}
+  - {fileID: 11400000, guid: b7169afd352d60b40a4611df64a6fbdd, type: 2}
+  - {fileID: 11400000, guid: 35c041272aab0de4fa7d09edb9de6839, type: 2}
+  - {fileID: 11400000, guid: bd5a1dd845cb13b47a543edfc285ffe4, type: 2}
+  musicSounds:
+  - {fileID: 11400000, guid: d475d3a69bad1f64d9acfc5c8403f185, type: 2}
+  badMusicSounds:
+  - {fileID: 11400000, guid: 89a8b839792e48847bac0ad2bc7ff873, type: 2}
+--- !u!4 &1943220127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943220125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1987632144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,6 +1780,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1195943705}
   - {fileID: 302051464}
   - {fileID: 141466758}
   - {fileID: 2160264}
