@@ -18,6 +18,8 @@ namespace Jump_and_Run.Player
         [Header("Movement Stuff")] 
         [SerializeField] private float speed;
         [SerializeField] private float horizontalInput;
+        [SerializeField] private float maxStepTime;
+        [SerializeField] private float stepTime;
         [SerializeField] private Rigidbody2D rigid;
         [SerializeField] private BoxCollider2D boxCollider;
         [SerializeField] private Vector3 currentRespawnPoint;
@@ -186,10 +188,18 @@ namespace Jump_and_Run.Player
                     anim.SetBool(IsRunning, false);
                     break;
             }
-            if(AudioManager.Instance.CheckSoundPlaying("Step"))
-                return;
 
-            AudioManager.Instance.PlaySound("Step");
+            // Makes the step sound.
+            if(horizontalInput != 0 && rigid.velocity.y == 0)
+            {
+                stepTime -= Time.deltaTime;
+
+                if (stepTime > 0)
+                    return;
+
+                stepTime = maxStepTime;
+                AudioManager.Instance.PlaySound("Step");
+            }
         }
 
         private void Jump()

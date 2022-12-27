@@ -54,9 +54,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/UX/ParallaxEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Visual Novel/VisualNovelManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Main Menu/MainMenuBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Enemy/EnemyBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -136,7 +136,7 @@
       <workItem from="1671125884629" duration="5792000" />
       <workItem from="1671389737716" duration="4512000" />
       <workItem from="1671661688077" duration="4826000" />
-      <workItem from="1671835515962" duration="3102000" />
+      <workItem from="1671835515962" duration="4537000" />
     </task>
     <servers />
   </component>

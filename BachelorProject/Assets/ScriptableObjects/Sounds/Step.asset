@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Step
   m_EditorClassIdentifier: 
   soundName: Step
-  clip: {fileID: 8300000, guid: 0fa6ded2dd47a7d47a51d0f48f352c3f, type: 3}
+  clip: {fileID: 8300000, guid: 03cf913101caa714293bbd4b20f623e1, type: 3}
   mixer: {fileID: 1745199063355484868, guid: f686f65941cb25043b66b0649cefdb93, type: 2}
-  volume: 2
+  volume: 0.5
   pitch: 1
   source: {fileID: 0}

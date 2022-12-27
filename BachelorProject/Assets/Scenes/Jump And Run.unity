@@ -159,6 +159,8 @@ MonoBehaviour:
   gameFeelManager: {fileID: 1279788830}
   speed: 175
   horizontalInput: 0
+  maxStepTime: 0.4
+  stepTime: 0
   rigid: {fileID: 261716477}
   boxCollider: {fileID: 261716476}
   currentRespawnPoint: {x: 0, y: 0, z: 0}
