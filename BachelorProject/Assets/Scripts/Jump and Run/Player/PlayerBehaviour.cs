@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Jump_and_Run.UX;
 using Misc;
@@ -94,13 +95,25 @@ namespace Jump_and_Run.Player
 
             if (other.CompareTag("GameController"))
                 currentRespawnPoint = other.transform.position;
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("Untagged") || rigid.velocity.y is <= -1.2f or >= 1.2f)
+                return;
             
-            if (other.gameObject.CompareTag("Untagged"))
-            {
-                anim.SetBool(IsGrounded, true);
-                groundedTimer = resetTimer;
-                canDash = false;
-            }
+            anim.SetBool(IsGrounded, true);
+            groundedTimer = resetTimer;
+            canDash = false;
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("Untagged"))
+                return;
+            
+            canDash = true;
+            groundedTimer = resetTimer;
         }
 
         private void OnCollisionStay2D(Collision2D other)
@@ -225,7 +238,7 @@ namespace Jump_and_Run.Player
             AudioManager.Instance.PlaySound("Dash");
             canDash = false;
             anim.SetTrigger(Dash1);
-            while (currentDashTime < dashTime)
+            while (currentDashTime < dashTime && _mayMove)
             {
                 currentDashTime += Time.deltaTime;
                 
@@ -242,9 +255,13 @@ namespace Jump_and_Run.Player
             SceneManager.LoadScene(2);
         }
 
-        // Respawns the player.
+        
+        /// <summary>
+        /// Respawns the player.
+        /// </summary>
         private void Respawn()
         {
+            _mayMove = false;
             rigid.velocity = Vector2.zero;
             boxCollider.enabled = false;
             AudioManager.Instance.PlayOnlySound("Death");
@@ -281,6 +298,7 @@ namespace Jump_and_Run.Player
             rigid.velocity = Vector2.zero;
             boxCollider.enabled = true;
             timeTillJumpInput = 0;
+            spriteRenderer.flipX = false;
         }
         
         public void AllowMove()

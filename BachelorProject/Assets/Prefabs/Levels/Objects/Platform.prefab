@@ -384,6 +384,9 @@ MonoBehaviour:
   standardMovementVector: {x: 0, y: 1, z: 0}
   rb: {fileID: 6547706214794804070}
   render: {fileID: 0}
+  anim: {fileID: 0}
+  waitingTime: 0
+  mayPlaySound: 0
   isBuggy: 0
   rotateSuccessRate: 10000
   changer: {fileID: 0}
@@ -397,7 +400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1905576911872440212}
-  - component: {fileID: 996216829542007878}
+  - component: {fileID: 6854365903276683347}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -420,8 +423,8 @@ Transform:
   m_Father: {fileID: 6547706214794804073}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &996216829542007878
-CircleCollider2D:
+--- !u!61 &6854365903276683347
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -429,13 +432,23 @@ CircleCollider2D:
   m_GameObject: {fileID: 6862781877178675160}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dea177e3bb63bc4478163700e9ac1974, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.37426293}
+  m_Offset: {x: -0.008969486, y: 0.099999994}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0158731, y: 1.0158731}
+    newSize: {x: 1.0158731, y: 1.0158731}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.12573707
+  m_Size: {x: 0.58206105, y: 0.2144407}
+  m_EdgeRadius: 0
 --- !u!1 &8101116231444322459
 GameObject:
   m_ObjectHideFlags: 0
