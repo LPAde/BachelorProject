@@ -103,7 +103,7 @@ namespace Jump_and_Run.Player
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnCollisionStay2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Untagged") && rigid.velocity.y == 0)
             {
@@ -286,6 +286,7 @@ namespace Jump_and_Run.Player
         public void AllowMove()
         {
             _mayMove = true;
+            AudioManager.Instance.PlaySound("Background Music");
         }
         
         #endregion
