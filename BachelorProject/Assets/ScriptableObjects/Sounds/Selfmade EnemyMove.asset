@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Selfmade EnemyMove
   m_EditorClassIdentifier: 
   soundName: Enemy
-  clip: {fileID: 8300000, guid: 3e62fc3c36c23364f991c29d9df28848, type: 3}
+  clip: {fileID: 8300000, guid: 9145ed6d45d23c843993217fd9f650ac, type: 3}
   mixer: {fileID: 1745199063355484868, guid: f686f65941cb25043b66b0649cefdb93, type: 2}
   volume: 0.6
   pitch: 1

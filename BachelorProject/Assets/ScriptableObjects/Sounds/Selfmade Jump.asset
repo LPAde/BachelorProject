@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Selfmade Jump
   m_EditorClassIdentifier: 
   soundName: Jump
-  clip: {fileID: 8300000, guid: 7781379b32d1f7a419eb5886442af059, type: 3}
+  clip: {fileID: 8300000, guid: a505140ac410cf644a415d83ce27f1f9, type: 3}
   mixer: {fileID: 1745199063355484868, guid: f686f65941cb25043b66b0649cefdb93, type: 2}
   volume: 1
   pitch: 1

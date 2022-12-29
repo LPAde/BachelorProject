@@ -96,8 +96,9 @@ namespace Misc
                 s.source.Play();
                 return true;
             }
+            if(!s.source.isPlaying)
+                s.source.Play();
             
-            s.source.Play();
             return true;
         }
         
