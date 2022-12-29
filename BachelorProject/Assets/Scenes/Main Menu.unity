@@ -1727,15 +1727,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7169afd352d60b40a4611df64a6fbdd, type: 2}
   - {fileID: 11400000, guid: 35c041272aab0de4fa7d09edb9de6839, type: 2}
   - {fileID: 11400000, guid: bd5a1dd845cb13b47a543edfc285ffe4, type: 2}
+  - {fileID: 11400000, guid: a341a4eaf9e567948922100756e0fda5, type: 2}
   badSfxSounds:
-  - {fileID: 11400000, guid: f5b24849422e0df4b8caf8808890b19a, type: 2}
-  - {fileID: 11400000, guid: 7f44c4abe3e5f2d4dacdf43b7e9a3814, type: 2}
-  - {fileID: 11400000, guid: 7823e55ea76aff44dae2da7bb1cf54fc, type: 2}
-  - {fileID: 11400000, guid: d475d3a69bad1f64d9acfc5c8403f185, type: 2}
+  - {fileID: 11400000, guid: 86b0e4af7b31cbc428ab2a2e68bdbeff, type: 2}
+  - {fileID: 11400000, guid: 91d598f9a5dc824418259677c10e2ada, type: 2}
+  - {fileID: 11400000, guid: 68abce0fcde1fe54ca55105c869bf59d, type: 2}
+  - {fileID: 11400000, guid: 89a8b839792e48847bac0ad2bc7ff873, type: 2}
   - {fileID: 11400000, guid: c269eeebfa74f0b4dbce0d3c29a487db, type: 2}
-  - {fileID: 11400000, guid: b7169afd352d60b40a4611df64a6fbdd, type: 2}
+  - {fileID: 11400000, guid: 45a89d462652c25478fb9ebedb3d8e57, type: 2}
   - {fileID: 11400000, guid: 35c041272aab0de4fa7d09edb9de6839, type: 2}
   - {fileID: 11400000, guid: bd5a1dd845cb13b47a543edfc285ffe4, type: 2}
+  - {fileID: 11400000, guid: 0aa3ea19aa9518e4789946c452c3bb08, type: 2}
   musicSounds:
   - {fileID: 11400000, guid: d475d3a69bad1f64d9acfc5c8403f185, type: 2}
   badMusicSounds:

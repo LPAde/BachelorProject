@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b2035b57243d1c4486f5df497e2a25c, type: 3}
-  m_Name: Dash
+  m_Name: Selfmade Step
   m_EditorClassIdentifier: 
-  soundName: Dash
-  clip: {fileID: 8300000, guid: c7587ddf19f38434c8710e791ba9716c, type: 3}
+  soundName: Step
+  clip: {fileID: 8300000, guid: 3d18a15d6ab1faa45a70d09ded057ed7, type: 3}
   mixer: {fileID: 1745199063355484868, guid: f686f65941cb25043b66b0649cefdb93, type: 2}
-  volume: 1
+  volume: 3
   pitch: 1
   source: {fileID: 0}
