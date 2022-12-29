@@ -162,7 +162,7 @@ namespace Jump_and_Run.Player
             if(timeTillJumpInput > 0 && groundedTimer > 0)
                 Jump();
 
-            if (Input.GetButtonUp("Jump") && rigid.velocity.y > 0)
+            if (Input.GetButtonUp("Jump") && rigid.velocity.y > jumpStrength*jumpCut)
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpStrength*jumpCut);
             }
@@ -263,7 +263,7 @@ namespace Jump_and_Run.Player
             _mayMove = false;
             rigid.velocity = Vector2.zero;
             boxCollider.enabled = false;
-            AudioManager.Instance.PlayOnlySound("Death");
+            AudioManager.Instance.PlaySound("Death");
             anim.SetBool(Dies, true);
             anim.SetTrigger(Death);
             StartCoroutine(gameFeelManager.FadeToBlack());
@@ -303,7 +303,6 @@ namespace Jump_and_Run.Player
         public void AllowMove()
         {
             _mayMove = true;
-            AudioManager.Instance.PlaySound("Background Music");
         }
         
         #endregion
