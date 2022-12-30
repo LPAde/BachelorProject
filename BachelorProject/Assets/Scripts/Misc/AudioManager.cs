@@ -12,7 +12,7 @@ namespace Misc
         public static AudioManager Instance;
                 
         [SerializeField] private JumpAndRunChanger changer;
-        
+
         [SerializeField] private List<Sound> sfxSounds;
         [SerializeField] private List<Sound> badSfxSounds;
         
@@ -28,8 +28,7 @@ namespace Misc
             // Singleton.
             if (Instance != null)
             {
-                Destroy(gameObject);
-                return;
+                Destroy(Instance);
             }
         
             Instance = this;
