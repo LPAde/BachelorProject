@@ -262,6 +262,7 @@ namespace Jump_and_Run.Player
         {
             _mayMove = false;
             rigid.velocity = Vector2.zero;
+            rigid.gravityScale = 0;
             boxCollider.enabled = false;
             AudioManager.Instance.PlaySound("Death");
             anim.SetBool(Dies, true);
@@ -298,6 +299,7 @@ namespace Jump_and_Run.Player
             boxCollider.enabled = true;
             timeTillJumpInput = 0;
             spriteRenderer.flipX = false;
+            rigid.gravityScale = 1;
         }
         
         public void AllowMove()

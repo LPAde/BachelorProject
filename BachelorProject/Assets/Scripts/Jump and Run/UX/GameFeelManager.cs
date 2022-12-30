@@ -7,7 +7,6 @@ namespace Jump_and_Run.UX
     public class GameFeelManager : MonoBehaviour
     {
         [SerializeField] private PlayerBehaviour player;
-        [SerializeField] private CameraBehaviour cam;
         
         [Header("Fade to black stuff")]
         [SerializeField] private SpriteRenderer blackColor;
@@ -25,7 +24,6 @@ namespace Jump_and_Run.UX
             }
 
             player.ResetPosition();
-            cam.SetCameraPosition(player.transform.position + Vector3.up + Vector3.back);
             yield return new WaitForSeconds(1);
             
             while (blackColor.color.a > 0)

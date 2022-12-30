@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -42,6 +43,7 @@ namespace Jump_and_Run.Downgradings
                     {
                         Time.timeScale = rn;
                         currentDuration = Time.timeScale * lagDuration;
+                       
                     }
                 }
                 else
