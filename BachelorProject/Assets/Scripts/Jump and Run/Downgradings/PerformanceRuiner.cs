@@ -32,18 +32,18 @@ namespace Jump_and_Run.Downgradings
             {
                 if (Math.Abs(Time.timeScale - 1) < .1f)
                 {
-                    float rn = Random.Range(.1f, .5f);
+                    float rn = Random.Range(.1f, .9f);
 
-                    // Only 60% Chance of slowdowns to make them seem more random.
-                    if (rn > .3f)
+                    // Only set chance of slowdowns to make them seem more random.
+                    if (rn is > .3f and < .8f)
                     {
                         currentDuration = intervalDuration;
                     }
                     else
                     {
+                        // Make the duration also fairly random for... fun... yeah for fun.
                         Time.timeScale = rn;
-                        currentDuration = Time.timeScale * lagDuration;
-                       
+                        currentDuration = Time.timeScale * lagDuration * Random.Range(.3f, 3);
                     }
                 }
                 else
