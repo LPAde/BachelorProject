@@ -4,6 +4,7 @@ using Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Visual_Novel;
 
 namespace Main_Menu
 {
@@ -11,6 +12,12 @@ namespace Main_Menu
     {
         [SerializeField] private List<Button> allButtons;
         [SerializeField] private int newScene;
+        [SerializeField] private JumpAndRunChanger changer;
+
+        private void Awake()
+        {
+            changer.OnEnable();
+        }
 
         private void Update()
         {

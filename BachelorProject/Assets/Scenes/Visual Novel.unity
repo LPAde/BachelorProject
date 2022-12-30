@@ -14646,10 +14646,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7984386602109342831, guid: 513710e1a1c865e44b175d1e4eb6727c, type: 3}
       propertyPath: m_text
-      value: 'Hello Kai, due to the current financial situation of our company we
-        are doing various cuts in our personnel. Sadly your studio is affected by
-        these circumstances too and we have to ask you to reduce your team by one
-        member.
+      value: 'Hello, due to the current financial situation of our company we are
+        doing various cuts in our personnel. Sadly your studio is affected by these
+        circumstances too and we have to ask you to reduce your team by one member.
 
 '
       objectReference: {fileID: 0}

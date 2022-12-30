@@ -14,7 +14,7 @@ namespace Visual_Novel
             private set;
         }
 
-        private void OnEnable()
+        public void OnEnable()
         {
             FiredDepartmentsCount = 0;
             

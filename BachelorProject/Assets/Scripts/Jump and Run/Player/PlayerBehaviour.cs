@@ -92,8 +92,11 @@ namespace Jump_and_Run.Player
             if (other.CompareTag("Respawn"))
                 Respawn();
 
-            if (other.CompareTag("GameController"))
+            if (other.CompareTag("GameController") && other.transform.position != currentRespawnPoint)
+            {
                 currentRespawnPoint = other.transform.position;
+                AudioManager.Instance.PlaySound("Phone");
+            }
         }
 
         private void OnTriggerStay2D(Collider2D other)
