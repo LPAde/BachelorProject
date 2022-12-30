@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -62,6 +63,7 @@ namespace Visual_Novel.Dialog
             else
             {
                 textBoxes[textIndex].SetActive(true);
+                AudioManager.Instance.PlayOnlySound("UI");
             }
         }
     }

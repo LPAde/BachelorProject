@@ -47,7 +47,7 @@ namespace Visual_Novel
         /// <param name="department"> The department you want to fire. </param>
         public void FireDepartment(int department)
         {
-            AudioManager.Instance.PlaySound("UI");
+            AudioManager.Instance.PlaySound("UI2");
             firedDepartments[department] = true;
             changer.FireDepartment((GameDepartments)department);
             buttons.SetActive(false);
