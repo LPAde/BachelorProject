@@ -118,25 +118,6 @@ namespace Jump_and_Run.Player
             groundedTimer = resetTimer;
         }
 
-        private void OnCollisionStay2D(Collision2D other)
-        {
-            if (other.gameObject.CompareTag("Untagged") && rigid.velocity.y == 0)
-            {
-                anim.SetBool(IsGrounded, true);
-                groundedTimer = 1;
-                canDash = false;
-            }
-        }
-        
-        private void OnCollisionExit2D(Collision2D other)
-        {
-            if (other.gameObject.CompareTag("Untagged"))
-            {
-                canDash = true;
-                groundedTimer = resetTimer;
-            }
-        }
-
         #endregion
 
         #region Private Methods
@@ -171,7 +152,16 @@ namespace Jump_and_Run.Player
             }
 
             if (canDash && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (isBuggy)
+                {
+                    // Sometimes won't work when game is buggy.
+                    if(Random.Range(0, 100) > jumpSuccessRate)
+                        return;
+                }
+                
                 StartCoroutine(Dash());
+            }
         }
 
         /// <summary>
