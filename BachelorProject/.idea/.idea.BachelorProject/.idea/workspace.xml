@@ -57,6 +57,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Main Menu/MainMenuBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Jump and Run/Player/PlayerBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Disclaimer/DisclaimerBehavior.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FMjCkXnLxOAKJK5Y7OiUVKxNxO" />
@@ -139,7 +140,8 @@
       <workItem from="1671835515962" duration="17122000" />
       <workItem from="1672413973063" duration="870000" />
       <workItem from="1672434551465" duration="2845000" />
-      <workItem from="1673363972231" duration="339000" />
+      <workItem from="1673363972231" duration="865000" />
+      <workItem from="1673968285533" duration="673000" />
     </task>
     <servers />
   </component>
