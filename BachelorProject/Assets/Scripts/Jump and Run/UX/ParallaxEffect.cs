@@ -16,10 +16,18 @@ namespace Jump_and_Run.UX
             length = GetComponent<SpriteRenderer>().bounds.size.x;
             cam = Camera.main.gameObject;
             camDist = startPos.y - cam.gameObject.transform.position.y;
-            parallaxValue *= -1;
+            parallaxValue *= -0.3f;
         }
 
         private void LateUpdate()
+        {
+            ParallaxMove();
+        }
+
+        /// <summary>
+        /// Moves the object the way it is supposed to be.
+        /// </summary>
+        private void ParallaxMove()
         {
             var position = cam.transform.position;
             float temp = position.x * (1- parallaxValue);
